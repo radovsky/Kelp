@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  location: MyString
+  num_stars: 1
+  price_range: 1
+  description: MyString
+  category: MyString
+
+two:
+  name: MyString
+  location: MyString
+  num_stars: 1
+  price_range: 1
+  description: MyString
+  category: MyString
