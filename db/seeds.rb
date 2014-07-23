@@ -5,3 +5,8 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+Business.create(name: 'Rotting Whale Carcass', location: 'Pacific Ocean', description: 'delicious!', price_range: 1)
+
+Business.create(name: 'Coral Reef', location: 'Arctic Ocean', description: 'everything is dead', price_range: 4)
+
+Business.create(name: 'Sunken Submarine', location: 'Marianas Trench', description: 'high-pressure environment', price_range: 2)
