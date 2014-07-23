@@ -1,6 +1,7 @@
 Kelp.Routers.AppRouter = Backbone.Router.extend({
 	routes: {
-		'': 'businessesIndex'
+		'': 'businessesIndex',
+		'businesses/:id': 'businessesShow'
 	},
 	
 	initialize: function($rootEl) {
@@ -19,5 +20,13 @@ Kelp.Routers.AppRouter = Backbone.Router.extend({
 		});
 		Kelp.businesses.fetch();
 		this._swapView(businessesIndexView);
+	},
+	
+	businessesShow: function(id) {
+		var business = Kelp.businesses.getOrFetch(id);
+		var businessShowView = new Kelp.Views.BusinessesShow({
+			model: business
+		});
+		this._swapView(businessShowView);
 	}
 });
