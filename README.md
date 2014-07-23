@@ -1,3 +1,3 @@
 KELP
 
-It's like Yelp for sea creatures! 
+It's like Yelp for sea creatures!
