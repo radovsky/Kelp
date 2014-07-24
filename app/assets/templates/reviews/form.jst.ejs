@@ -1,0 +1,46 @@
+<form class='form'>
+	<div class='form-group'>
+		
+		<input 
+			type='text' 
+			class='form-control' 
+			id='name'
+			name='name'
+			placeholder="What's it called?"
+			autofocus='true'>
+		<br>
+		<input 
+			type='text' 
+			class='form-control' 
+			id='location' 
+			name='location'
+			placeholder="Where's it at?">
+		<br>
+		<textarea
+			class='form-control'
+			id='description'
+			name='description'
+			placeholder="Tell us about your experience!"></textarea>
+		<br>
+		How much did you like it?
+		<div class="form-control num_stars" id='num_stars'>
+		    <span><input type="radio" name="num_stars" id="str5" value="5"><label for="str5">5</label></span>
+		    <span><input type="radio" name="num_stars" id="str4" value="4"><label for="str4">4</label></span>
+		    <span><input type="radio" name="num_stars" id="str3" value="3"><label for="str3">3</label></span>
+		    <span><input type="radio" name="num_stars" id="str2" value="2"><label for="str2">2</label></span>
+		    <span><input type="radio" name="num_stars" id="str1" value="1"><label for="str1">1</label></span>
+		</div>
+		<br>
+		How expensive is it?
+		<div class="form-control price_range" id='price_range_range'>
+		    <span><input type="radio" name="price_range" id="dlr4" value="4"><label for="dlr4">4</label></span>
+		    <span><input type="radio" name="price_range" id="dlr3" value="3"><label for="dlr3">3</label></span>
+		    <span><input type="radio" name="price_range" id="dlr2" value="2"><label for="dlr2">2</label></span>
+		    <span><input type="radio" name="price_range" id="dlr1" value="1"><label for="dlr1">1</label></span>
+		</div>
+		<br>
+	</div>
+	<input type="submit" class='btn btn-success'></input>
+	<a href='#' class='close close-lg'>&times;</a>
+	<br><br>
+</form>

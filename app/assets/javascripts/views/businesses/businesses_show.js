@@ -1,8 +1,6 @@
 Kelp.Views.BusinessesShow = Backbone.CompositeView.extend({
 	template: JST['businesses/show'],
 	
-	tagName: 'li',
-	
 	initialize: function() {
 		
 		this.listenTo(

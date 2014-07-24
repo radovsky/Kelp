@@ -6,15 +6,12 @@ Kelp.Views.BusinessesForm = Backbone.ButtonFormView.extend({
 	create: function(event) {
 		event.preventDefault();
 		var opts = $(event.target).serializeJSON();
-		console.log(opts);
-		this.collection.create(opts, {
-			wait: true
-		});
-		this.$('.name').val('');
-		this.$('.location').val('');
-		this.$('.description').val('');
+		this.collection.create(opts, { wait: true });
+		// this.$('.name').val('');
+		// this.$('.location').val('');
+		// this.$('.description').val('');
 		// this.$('.num_stars').val('');
 		// this.$('.price_range').val('');
-		this.$('.name').focus();
+		// this.$('.name').focus();
 	}
 });
