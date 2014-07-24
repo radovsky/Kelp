@@ -1,4 +1,4 @@
-Backbone.ButtonFormView = Backbone.View.Extend({
+Backbone.ButtonFormView = Backbone.View.extend({
 	formShowing: false,
 	
 	events: {

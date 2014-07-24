@@ -14,10 +14,12 @@ Kelp.Views.BusinessesIndex = Backbone.CompositeView.extend({
 			"add",
 			this.addBusiness
 		);
-		var that = this;
-		this.collection.each(function(business) {
-			that.addBusiness(business);
+		
+		var newBusinessButton = new Kelp.Views.BusinessesForm({
+			collection: this.collection
 		});
+		console.log(newBusinessButton);
+		this.addSubview('#new-business-button', newBusinessButton);
 	},
   
 	addBusiness: function(business) {
