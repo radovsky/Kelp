@@ -6,7 +6,7 @@ module Api
         render json: @business
       else
         render json: @business.errors.full_messages, 
-        status: :unprocessable_entity
+                     status: :unprocessable_entity
       end
     end
     
@@ -16,7 +16,7 @@ module Api
         render json: @business
       else
         render json: @business.errors.full_messages, 
-        status: :unprocessable_entity
+                     status: :unprocessable_entity
       end
     end
     
