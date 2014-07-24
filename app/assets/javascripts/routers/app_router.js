@@ -4,8 +4,8 @@ Kelp.Routers.AppRouter = Backbone.Router.extend({
 		'businesses/:id': 'businessesShow',
 		'users': 'usersIndex',
 		'users/:id': 'usersShow',
-		'reviews': 'reviewsIndex',
-		'reviews': 'reviewsShow'
+		// 'reviews': 'reviewsIndex',
+		// 'reviews': 'reviewsShow'
 	},
 	
 	initialize: function($rootEl) {
@@ -50,19 +50,19 @@ Kelp.Routers.AppRouter = Backbone.Router.extend({
 		this._swapView(userShowView);
 	},
 	
-	reviewsIndex: function() {
-		var reviewsIndexView = new Kelp.Views.ReviewsIndex({
-			collection: Kelp.reviews
-		});
-		Kelp.reviews.fetch();
-		this._swapView(reviewsIndexView);
-	},
-	
-	reviewsShow: function(id) {
-		var review = Kelp.reviews.getOrFetch(id);
-		var reviewShowView = new Kelp.Views.ReviewsShow({
-			model: review
-		});
-		this._swapView(reviewShowView);
-	}
+	// reviewsIndex: function() {
+	// 	var reviewsIndexView = new Kelp.Views.ReviewsIndex({
+	// 		collection: Kelp.reviews
+	// 	});
+	// 	Kelp.reviews.fetch();
+	// 	this._swapView(reviewsIndexView);
+	// },
+	//
+	// reviewsShow: function(id) {
+	// 	var review = Kelp.reviews.getOrFetch(id);
+	// 	var reviewShowView = new Kelp.Views.ReviewsShow({
+	// 		model: review
+	// 	});
+	// 	this._swapView(reviewShowView);
+	// }
 });
