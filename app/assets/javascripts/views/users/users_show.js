@@ -1,5 +1,5 @@
-Kelp.Views.BusinessesShow = Backbone.CompositeView.extend({
-	template: JST['businesses/show'],
+Kelp.Views.UsersShow = Backbone.CompositeView.extend({
+	template: JST['users/show'],
 	
 	tagName: 'li',
 	
@@ -26,7 +26,7 @@ Kelp.Views.BusinessesShow = Backbone.CompositeView.extend({
 	
 	render: function() {
 		var renderedContent = this.template({
-			business: this.model
+			user: this.model
 		});
 		this.$el.html(renderedContent);
 		this.attachSubviews();
