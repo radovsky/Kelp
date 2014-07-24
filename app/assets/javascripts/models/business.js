@@ -5,6 +5,7 @@ Kelp.Models.Business = Backbone.Model.extend({
 		if (jsonResp.reviews) {
 			this.reviews().set(jsonResp.reviews, { parse: true });
 		}
+		return jsonResp;
 	},
 
 	reviews: function() {

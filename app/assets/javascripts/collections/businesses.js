@@ -6,7 +6,7 @@ Kelp.Collections.Businesses = Backbone.Collection.extend({
 	getOrFetch: function(id) {
 		var businesses = this;
 		var business;
-		
+
 		if (business = this.get(id)) {
 			business.fetch();
 		} else {

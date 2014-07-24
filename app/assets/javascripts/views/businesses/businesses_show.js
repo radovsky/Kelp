@@ -4,6 +4,7 @@ Kelp.Views.BusinessesShow = Backbone.CompositeView.extend({
 	tagName: 'li',
 	
 	initialize: function() {
+		
 		this.listenTo(
 			this.model,
 			'sync',

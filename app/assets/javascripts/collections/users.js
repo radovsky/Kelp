@@ -1,5 +1,5 @@
 Kelp.Collections.Users = Backbone.Collection.extend({
-	url: 'api/users',
+	url: 'users',
 	
 	model: Kelp.Models.User,
 	
