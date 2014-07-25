@@ -18,12 +18,12 @@
 body, html {
 	height: 100%;
 }
-body {
-  background-image: url('../logo.jpg');
-  background-repeat:no-repeat;
-  background-attachment:fixed;
-  background-position:center; 
-}
+//body {
+//  background-image: url('../logo.jpg');
+//  background-repeat:no-repeat;
+//  background-attachment:fixed;
+//  background-position:center;
+//}
 
 ul {
     list-style-type: none;
@@ -32,19 +32,31 @@ ul {
 }
 
 div#map-canvas {
-	width:30%;
+	width:40%;
 	position:absolute;
 	top:0;
 	bottom:0;
+	border-right:thin solid rgb(175,175,175);
 }
+
 div#content {
 	position:absolute;
-	left:30%;
+	left:40%;
 	overflow:auto;
 	top:0;
 	bottom:0;
 	right:0;
 	
+}
+
+.navbar-default .navbar-nav > .active > a {
+	background-color:white;
+	border:none;
+}
+
+.navbar {
+	background-color:white;
+	border:none;
 }
 
 div#main-content {
