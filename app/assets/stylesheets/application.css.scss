@@ -15,8 +15,10 @@
  */
 @import 'bootstrap';
 
+body, html {
+	height: 100%;
+}
 body {
-  padding-top: 60px;
   background-image: url('../logo.jpg');
   background-repeat:no-repeat;
   background-attachment:fixed;
@@ -30,11 +32,26 @@ ul {
 }
 
 div#map-canvas {
-	position:relative;
-	float:left;
+	width:30%;
+	position:absolute;
+	top:0;
+	bottom:0;
+}
+div#content {
+	position:absolute;
+	left:30%;
+	overflow:auto;
+	top:0;
+	bottom:0;
+	right:0;
+	
 }
 
-div.container {
-	display:inline-block;
-	float:right;
+div#main-content {
+	position: absolute;
+	top: 50px;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	overflow:hidden;
 }
