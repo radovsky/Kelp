@@ -8,13 +8,15 @@
     <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
  
     <script type="text/javascript"
-      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDzv-JzqcVWSTO389xK5MOO-hK-0-ybucU">
+      src="https://maps.googleapis.com/maps/api/js?key=<%= ENV['GOOGLE_API_KEY'] %>">
     </script>
     <script type="text/javascript">
       function initialize() {
         var mapOptions = {
           center: new google.maps.LatLng(37.775, -122.419),
-          zoom: 11
+          zoom: 11,
+		  disableDefaultUI: true
+		  
         };
         var map = new google.maps.Map(document.getElementById("map-canvas"),
             mapOptions);
