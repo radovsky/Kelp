@@ -1,5 +1,7 @@
 <h3 class='review-name'>
-	Review from <%= user.escape('username') %>
+	Review from <a href='#/users/<%= user.id %>'>
+		<%= user.escape('username') %>
+	</a>
 </h3>
 
 <div class='review-user'>

@@ -1,8 +1,7 @@
 Kelp.Views.BusinessesIndex = Backbone.CompositeView.extend({
 	template: JST['businesses/index'],
   
-	initialize: function(options) {
-	  
+	initialize: function() {
 		this.listenTo(
 			this.collection,
 			"sync",
@@ -18,6 +17,8 @@ Kelp.Views.BusinessesIndex = Backbone.CompositeView.extend({
 		var newBusinessButton = new Kelp.Views.BusinessesForm({
 			collection: this.collection
 		});
+		
+		this.collection.each(this.addBusiness.bind(this));
 		this.addSubview('#new-business-button', newBusinessButton);
 	},
   

@@ -22,6 +22,8 @@ Kelp.Views.BusinessesShow = Backbone.CompositeView.extend({
 			collection: businessReviews,
 			business: this.model
 		});
+		
+		this.model.reviews().each(this.addReview.bind(this));
 		this.addSubview('#new-review-button', newReviewButton);
 	},
 	
