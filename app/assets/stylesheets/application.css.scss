@@ -28,3 +28,13 @@ ul {
     padding-left: 40px;
     margin: 0px;
 }
+
+div#map-canvas {
+	position:relative;
+	float:left;
+}
+
+div.container {
+	display:inline-block;
+	float:right;
+}
