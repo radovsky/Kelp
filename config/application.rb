@@ -21,6 +21,3 @@ module Kelp
     # config.i18n.default_locale = :de
   end
 end
-
-
-config.serve_static_assets = true

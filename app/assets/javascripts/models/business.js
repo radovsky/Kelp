@@ -1,16 +1,16 @@
 Kelp.Models.Business = Backbone.Model.extend({
 	urlRoot: 'api/businesses',
 	
-	parse: function(jsonResp) {
-		if (jsonResp.reviews) {
-			this.reviews().set(jsonResp.reviews, { parse: true });
+	parse: function(jsonResponse) {
+		if (jsonResponse.reviews) {
+			this.reviews().set(jsonResponse.reviews, { parse: true });
 		}
-		return jsonResp;
+		return jsonResponse;
 	},
 
 	reviews: function() {
 		if (!this._reviews) {
-			this._reviews = new Kelp.Collections.BusinessReviews([], { 
+			this._reviews = new Kelp.Collections.BusinessReviews([], {
 				business: this 
 			});
 		}
