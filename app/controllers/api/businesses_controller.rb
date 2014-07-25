@@ -32,8 +32,9 @@ module Api
     end
     
     def show
-      @business = Business.find(params[:id])
-      render json: @business
+      @business = Business.includes(:reviews).find(params[:id])
+      render json: @business, include: :reviews
+      
     end
     
     private

@@ -4,8 +4,6 @@ module Api
       @review = Review.new(review_params)
       
       @review.user_id = current_user.id
-      business = Business.find(params[:id])
-      @review.business_id = business.id
       
       if @review.save
         render json: @review
@@ -43,7 +41,7 @@ module Api
     
     private
     def review_params
-      params.require(:review).permit(:num_stars, :description)
+      params.require(:review).permit(:num_stars, :description, :business_id)
     end
   end
 end

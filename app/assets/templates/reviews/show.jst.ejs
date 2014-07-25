@@ -1,13 +1,11 @@
 <h3 class='review-name'>
-	REVIEW
+	Review from <%= user.escape('username') %>
 </h3>
 
 <div class='review-user'>
-	User: <%= review.escape('user_id') %>
+	Description: <%= review.escape('description') %>
 </div>
 
 <div class='review-business'>
-	Business: <%= review.escape('business_id') %>
+	Rating: <%= review.escape('num_stars') %>
 </div>
-
-<a href="#/">Back</a>

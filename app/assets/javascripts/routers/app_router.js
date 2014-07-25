@@ -27,6 +27,7 @@ Kelp.Routers.AppRouter = Backbone.Router.extend({
 	businessesShow: function(id) {
 		var business = Kelp.businesses.getOrFetch(id);
 		var businessShowView = new Kelp.Views.BusinessesShow({
+			collection: Kelp.businesses,
 			model: business
 		});
 		this._swapView(businessShowView);

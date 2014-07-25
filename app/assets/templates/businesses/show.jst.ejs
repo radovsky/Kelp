@@ -1,5 +1,5 @@
 <h3 class='business-name'>
-	<a href='<%= business.url() %>'><%= business.escape('name') %></a>
+	<%= business.escape('name') %>
 </h3>
 
 <div class='business-location'>
@@ -18,8 +18,8 @@
 	Rating: <%= business.escape('num_stars') %>
 </div>
 
-<div id='new-reviews-button'></div>
-
+<div id='new-review-button'></div>
+<br><br><br>
 <ul class='reviews'></ul>
 
 <a href="#/">Back</a>
