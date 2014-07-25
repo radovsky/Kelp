@@ -7,7 +7,6 @@ class SessionsController < ApplicationController
       params[:user][:password]
     )
     if user
-      debugger
       sign_in!(user)
       redirect_to root_url
     else
