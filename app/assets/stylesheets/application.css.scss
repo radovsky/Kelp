@@ -38,7 +38,6 @@ div#map-canvas {
 }
 
 div#content {
-	box-shadow: -4px -2px 3px -1px rgba(0,0,0,0.65);
 	position:absolute;
 	left:40%;
 	overflow:auto;
@@ -46,6 +45,9 @@ div#content {
 	bottom:0;
 	right:0;
 	max-width:60%;
+	box-shadow: 2px -2px 3px 5px rgba(0,0,0,0.3);
+	-webkit-box-shadow: 2px -2px 3px 5px rgba(0,0,0,0.3);
+	-moz-box-shadow: 2px -2px 3px 5px rgba(0,0,0,0.3);
 }
 
 .navbar-default .navbar-nav > .active > a {
@@ -63,7 +65,9 @@ div#content {
 	bottom:0;
 	height:100%;
 	width:40%;
-	box-shadow: -1.5px 4px 3px -1px rgba(0,0,0,0.65);
+	box-shadow: -1.5px 4px 3px -1px rgba(0,0,0,0.3);
+	-webkit-box-shadow: -1.5px 4px 3px -1px rgba(0,0,0,0.3);
+	-moz-box-shadow: -1.5px 4px 3px -1px rgba(0,0,0,0.3);
 }
 
 div#main-content {

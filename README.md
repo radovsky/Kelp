@@ -1,3 +1,3 @@
-KELP
+Laissez-Fairebnb
 
-It's like Yelp for sea creatures!
+Built on Backbone and Rails

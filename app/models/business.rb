@@ -15,6 +15,10 @@
 
 class Business < ActiveRecord::Base
   validates :name, :location, :description, :price_range, presence: true
+
+  has_attached_file :avatar, styles: { medium: "300X300#", thumb: "100x100#" }, default_url: "/public/logo.jpg"
+  
+  validates_attachment_content_type(:avatar, content_type: /\Aimage\/.*\Z/)
   
   has_many :reviews
 end

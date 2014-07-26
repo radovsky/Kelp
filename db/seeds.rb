@@ -12,3 +12,9 @@ Business.create(name: 'Coral Reef', location: 'Arctic Ocean', description: 'ever
 Business.create(name: 'Sunken Submarine', location: 'Marianas Trench', description: 'high-pressure environment', category: 'Breakfast & Brunch', price_range: '2', num_stars: '2')
 
 Business.create(name: 'Garbage Island', location: 'Sargasso Sea', description: 'pretty trashy', category: 'American', price_range: '1', num_stars: '4')
+
+# Image.create({
+#   id: 1,
+#   asset: File.new("~/aA/kelp/public/avatars/whalefall.jpg"),
+#   business_id: 1
+# })

@@ -1,5 +1,15 @@
 module Api
   class BusinessesController < ApplicationController
+    wrap_parameters :business, include: [
+      :name, 
+      :location, 
+      :num_stars, 
+      :price_range, 
+      :description, 
+      :category,
+      :avatar
+    ]
+    
     def create
       @business = Business.new(business_params)
       if @business.save
@@ -47,7 +57,8 @@ module Api
         :num_stars, 
         :price_range, 
         :description, 
-        :category
+        :category,
+        :avatar
       )
     end
   end

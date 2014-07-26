@@ -12,6 +12,7 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'backbone-on-rails'
 gem 'bootstrap-sass'
 gem "paperclip", "~> 4.1"
+gem 'aws-sdk'
 gem 'figaro'
 
 group :doc do
