@@ -36,10 +36,14 @@ div#map-canvas {
 	position:absolute;
 	top:0;
 	bottom:0;
-	border-right:thin solid rgb(175,175,175);
+}
+
+.businesses-item {
+	min-height:200px;
 }
 
 div#content {
+	box-shadow: 0px 0 20px rgba(0, 0, 0, 0.5);
 	position:absolute;
 	left:40%;
 	overflow:auto;
