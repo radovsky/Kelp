@@ -9,13 +9,13 @@ Kelp.Views.BusinessesForm = Backbone.ButtonFormView.extend({
 	
 	handleFile: function(event) {
 		
-		console.log("I suck at handling files")
+		console.log("I suck at handling files");
 		var file = event.currentTarget.files[0];
 		var view = this;
 		var reader = new FileReader();
 		reader.onload = function(e) {
-			view.model.set('my_photo', this.result);
-			view.model.save();
+			view.model.set('avatar', this.result);
+
 		};
 		reader.readAsDataURL(file);
 	},
@@ -24,6 +24,11 @@ Kelp.Views.BusinessesForm = Backbone.ButtonFormView.extend({
 		event.preventDefault();
 		var opts = $(event.target).serializeJSON();
 		this.model.set(opts, { wait: true });
+		this.model.save({}, {
+			error: function(model, response) {
+				alert(response.responseText);
+			}
+		});
 		// this.$('.name').val('');
 		// this.$('.location').val('');
 		// this.$('.description').val('');

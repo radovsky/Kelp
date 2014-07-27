@@ -38,7 +38,7 @@ module Api
     
     def index
       @businesses = Business.all
-      render json: @businesses
+      render json: @businesses, methods: :avatar_url
     end
     
     def show

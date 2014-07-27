@@ -22,7 +22,8 @@ Kelp.Views.BusinessesIndex = Backbone.CompositeView.extend({
 		this.addSubview('#filters', businessFilter);
 		
 		var newBusinessButton = new Kelp.Views.BusinessesForm({
-			collection: this.collection
+			collection: this.collection,
+			model: new Kelp.Models.Business()
 		});
 		this.addSubview('#new-business-button', newBusinessButton);
 		

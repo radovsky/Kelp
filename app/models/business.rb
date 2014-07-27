@@ -21,4 +21,8 @@ class Business < ActiveRecord::Base
   validates_attachment_content_type(:avatar, content_type: /\Aimage\/.*\Z/)
   
   has_many :reviews
+
+  def avatar_url
+    avatar.url(:medium)
+  end
 end
