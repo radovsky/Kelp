@@ -5,16 +5,14 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
-Business.create(name: 'Rotting Whale Carcass', location: 'Pacific Ocean', description: 'delicious!', category:'Steakhouse', price_range: '1', num_stars: '5')
+Business.create(name: 'Beautiful Old Victorian', location: 'Haight/Ashbury, San Francisco', description: 'Bourgeonderful!', category:'Ok', price_range: '225', num_stars: '4.5', avatar: File.open('/Users/gabe/aA/kelp/public/images/Haight_Ashbury11.JPG'))
 
-Business.create(name: 'Coral Reef', location: 'Arctic Ocean', description: 'everything is dead', category: 'Nightlife', price_range: '4', num_stars: '3')
+Business.create(name: 'Rustic Shed', location: 'Golden Gate Bridge, San Francisco', description: 'Urban glamping at its finest!', category:'Bad', price_range: '95', num_stars: '3.2', avatar: File.open('/Users/gabe/aA/kelp/public/images/shack.jpg'))
 
-Business.create(name: 'Sunken Submarine', location: 'Marianas Trench', description: 'high-pressure environment', category: 'Breakfast & Brunch', price_range: '2', num_stars: '2')
+Business.create(name: 'Baller-ass Penthouse', location: 'SOMA, San Francisco', description: 'Sleep someplace better than all your friends!', category:'Ok', price_range: '965', num_stars: '4.9', avatar: File.open('/Users/gabe/aA/kelp/public/images/Museum-Tower-Penthouse_1.jpg'))
 
-Business.create(name: 'Garbage Island', location: 'Sargasso Sea', description: 'pretty trashy', category: 'American', price_range: '1', num_stars: '4')
+Business.create(name: 'Cozy Room for One', location: 'Alcatraz Island, San Francisco', description: "Memories you'll never escape!", category:'Terrible', price_range: '0', num_stars: '1.6', avatar: File.open('/Users/gabe/aA/kelp/public/images/Alcatraz.jpg'))
 
-# Image.create({
-#   id: 1,
-#   asset: File.new("~/aA/kelp/public/avatars/whalefall.jpg"),
-#   business_id: 1
-# })
+Business.create(name: 'Shared Room with Pets', location: 'Pier 39, San Francisco', description: "Hope you're not alergic!", category:'Ok', price_range: '99', num_stars: '4.4', avatar: File.open('/Users/gabe/aA/kelp/public/images/sea_lions.jpg'))
+
+Business.create(name: 'There may or may not be Actual Treasure', location: 'Treasure Island, San Francisco', description: "100% guarantee there either is or isn't!", category:'Bad', price_range: '1275', num_stars: '2.2', avatar: File.open('/Users/gabe/aA/kelp/public/images/tropical-island.jpg'))

@@ -36,7 +36,7 @@ Kelp.Views.BusinessesIndex = Backbone.CompositeView.extend({
 		var businessesItem = new Kelp.Views.BusinessesItem({
 			model: business
 		});
-		this.addSubview('#businesses', businessesItem);
+		this.addSubview('#businesses-list', businessesItem);
 	},
   
 	render: function() {

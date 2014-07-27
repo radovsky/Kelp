@@ -3,7 +3,7 @@ Kelp.Views.BusinessesItem = Backbone.View.extend({
 	
 	tagName: 'li',
 	
-	className: 'businesses-item col-sm-12 col-md-6 col-lg-4',
+	className: 'businesses-item col-sm-12 col-md-6',
 	
 	initialize: function() {
 		
