@@ -17,6 +17,7 @@
 
 body, html {
 	height: 100%;
+	font-family: avenir;
 }
 
 ul {
@@ -44,7 +45,8 @@ div#content {
 	top:0;
 	bottom:0;
 	right:0;
-	width:60%;
+	max-width:60%;
+	min-width:60%;
 	box-shadow: 2px -2px 3px 5px rgba(0,0,0,0.3);
 	-webkit-box-shadow: 2px -2px 3px 5px rgba(0,0,0,0.3);
 	-moz-box-shadow: 2px -2px 3px 5px rgba(0,0,0,0.3);

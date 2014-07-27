@@ -6,11 +6,6 @@ Kelp.Views.BusinessesFilter = Backbone.View.extend({
 			business: this.model
 		});
 		this.$el.html(renderedContent);
-		// this.renderCalendar();
 		return this;
-	},
-	
-	renderCalendar: function() {
-		$('.ui-datepicker-target').datepicker();
 	}
 });
