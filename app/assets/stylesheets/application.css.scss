@@ -86,3 +86,21 @@ div#main-content {
 	width: 98%;
 	margin: auto;
 }
+
+.calendar-left, .calendar-right, select.guests {
+	margin: auto;
+}
+
+select.guests {
+	left: 50%;
+	background-color:white;
+	color: rgba(0,0,0,0.7);
+}
+
+div.filter {
+	min-height: 80px;
+}
+
+.room-form {
+	margin: auto;
+}
