@@ -3,10 +3,27 @@ Kelp.Views.BusinessesForm = Backbone.ButtonFormView.extend({
 	buttonTemplate: JST['businesses/form_button'],
 	className: 'col-md-3',
 	
+	events: _(Backbone.ButtonFormView.prototype.events).extend({
+		"change #avatar": 'handleFile'
+	}),
+	
+	handleFile: function(event) {
+		
+		console.log("I suck at handling files")
+		var file = event.currentTarget.files[0];
+		var view = this;
+		var reader = new FileReader();
+		reader.onload = function(e) {
+			view.model.set('my_photo', this.result);
+			view.model.save();
+		};
+		reader.readAsDataURL(file);
+	},
+	
 	create: function(event) {
 		event.preventDefault();
 		var opts = $(event.target).serializeJSON();
-		this.collection.create(opts, { wait: true });
+		this.model.set(opts, { wait: true });
 		// this.$('.name').val('');
 		// this.$('.location').val('');
 		// this.$('.description').val('');
@@ -14,4 +31,6 @@ Kelp.Views.BusinessesForm = Backbone.ButtonFormView.extend({
 		// this.$('.price_range').val('');
 		// this.$('.name').focus();
 	}
+	
+	
 });
