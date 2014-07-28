@@ -28,13 +28,14 @@
   box-shadow: 0 0 1px rgba(0, 0, 0, 0);
 }
 .float:hover, .float:focus, .float:active {
-  -webkit-transform: translateY(-5px);
-  transform: translateY(-5px);
+  -webkit-transform: translateY(-3px);
+  transform: translateY(-3px);
 }
 
 body, html {
 	height: 100%;
-	font-family: avenir;
+	line-height: 1.5;
+	font-family: 'Lato', sans-serif;
 }
 
 ul.businesses-list {
@@ -47,6 +48,17 @@ ul.businesses-list {
 	white-space: nowrap;
 	overflow: hidden;
 	text-overflow:ellipsis;
+	padding-left: 15px;
+	padding-bottom: 20px;
+}
+
+div.business-name {
+	font-size: 135%;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow:ellipsis;
+	padding-left: 15px;
+	padding-top: 15px;
 }
 
 //.business-link {
@@ -108,6 +120,7 @@ a.navbar-brand {
 .navbar {
 	background-color:white;
 	border:none;
+	font-family: avenir;
 }
 
 .navbar-over-map {
