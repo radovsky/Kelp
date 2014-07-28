@@ -1,15 +1,7 @@
 Kelp.Views.BusinessesIndex = Backbone.CompositeView.extend({
 	template: JST['businesses/index'],
-	
-	
-  
+
 	initialize: function() {
-		this.listenTo(
-			this.collection,
-			"sync",
-			this.render
-		);
-	  
 		this.listenTo(
 			this.collection,
 			"add",
@@ -28,14 +20,22 @@ Kelp.Views.BusinessesIndex = Backbone.CompositeView.extend({
 		this.addSubview('#new-business-button', newBusinessButton);
 		
 		this.collection.each(this.addBusiness.bind(this));
+        
+        this.centerMap();
 	},
 	
-	
-  
 	addBusiness: function(business) {
 		var businessesItem = new Kelp.Views.BusinessesItem({
 			model: business
 		});
+		var marker = new google.maps.Marker({
+			position: new google.maps.LatLng(
+				business.escape('latitude'), 
+				business.escape('longitude')
+			),
+			map: map,
+			title: business.escape('name')
+		});	
 		this.addSubview('#businesses-list', businessesItem);
 	},
   
@@ -48,5 +48,10 @@ Kelp.Views.BusinessesIndex = Backbone.CompositeView.extend({
 		this.$el.html(renderedContent);
 		this.attachSubviews();
 		return this;
-	}
+	},
+    
+    centerMap: function() {
+        map.setCenter(new google.maps.LatLng(37.775, -122.419));
+        map.setZoom(11);
+    },
 });

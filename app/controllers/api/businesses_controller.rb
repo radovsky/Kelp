@@ -13,7 +13,7 @@ module Api
     def create
       @business = Business.new(business_params)
       if @business.save
-        render json: @business
+        render json: @business, methods: :avatar_url
       else
         render json: @business.errors.full_messages, 
                      status: :unprocessable_entity
