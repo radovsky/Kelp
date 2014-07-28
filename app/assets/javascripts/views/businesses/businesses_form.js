@@ -8,8 +8,6 @@ Kelp.Views.BusinessesForm = Backbone.ButtonFormView.extend({
 	}),
 	
 	handleFile: function(event) {
-		
-		console.log("I suck at handling files");
 		var file = event.currentTarget.files[0];
 		var view = this;
 		var reader = new FileReader();

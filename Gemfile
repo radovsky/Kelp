@@ -14,6 +14,7 @@ gem 'bootstrap-sass'
 gem "paperclip", "~> 4.1"
 gem 'aws-sdk'
 gem 'figaro'
+gem 'geocoder'
 
 group :doc do
   gem 'sdoc', require: false

@@ -5,3 +5,18 @@
 
 
 <div id='new-business-button'></div>
+
+<script>
+if (Kelp.businesses.length > 0) {
+	Kelp.businesses.each(function(business){
+		var marker = new google.maps.Marker({
+			position: new google.maps.LatLng(
+				business.escape('latitude'), 
+				business.escape('longitude')
+			),
+			map: map,
+			title: business.escape('name')
+		});	
+	});
+}
+</script>
