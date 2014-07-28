@@ -1,23 +1,25 @@
 <div class='row filter filter-calendar'>
-
-
-	<div class="input-daterange input-group calendar-left col-xs-4" id="datepicker">
-		<input type="text" class="input-sm form-control" id="start" placeholder="Check In">
-		<span class="input-group-addon">to</span>
-		<input type="text" class="input-sm form-control" id="end" placeholder="Check Out">
-	</div>
+	<form class='form-inline'>
+		<div class="filter-title">Trip Details</div>
+		<div class="form-group">
+		
 	
-	<div class='calendar-right col-xs-4'>
-		<select class="guests">
-			<option>1 Guest</option>
-			<option>2 Guests</option>
-			<option>2 Guests, 5 Cats</option>
-			<option>2 Girls, 1 Cup</option>
-			<option>2 Legit 2 Quit</option>
-		</select>
-	</div>
+			<div class="input-daterange input-group calendar-left" id="datepicker">
+				<input type="text" class="input-sm form-control" id="start" placeholder="Check In">
+				<span class="input-group-addon">to</span>
+				<input type="text" class="input-sm form-control" id="end" placeholder="Check Out">
+			</div>
 	
+			<select class="guests form-control">
+				<option>1 Guest</option>
+				<option>2 Guests</option>
+				<option>2 Guests, 5 Cats</option>
+				<option>2 Girls, 1 Cup</option>
+				<option>2 Legit 2 Quit</option>
+			</select>
 
+		</div>
+	</form>
 </div>
 
 <script>
@@ -37,19 +39,14 @@ $('#end').on('changeDate', function(event) {
 
 
 <div class="row filter filter-room-type">
-	Room Type
-
-	<input type="checkbox" value="Bike">Ok
-	<input type="checkbox" value="Car">Bad
-	<input type="checkbox" value="Car">Terrible
+	<div class="filter-title">Room Type</div>
+	<input type="checkbox" class="checkbox-inline" value="Ok">Ok
+	<input type="checkbox" class="checkbox-inline" value="Bad">Bad
+	<input type="checkbox" class="checkbox-inline" value="Terrible">Terrible
 
 </div>
 
 <div class="row filter filter-price-range">
-	<div class="price-slider">
-	</div>
+	<input class="slider" data-slider-max="500" data-slider-min="0" data-slider-value="[250,450]" type="text">
 </div>
 
-<script>
-// $('.price-slider').slider();
-</script>
