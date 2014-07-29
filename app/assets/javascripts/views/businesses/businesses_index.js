@@ -2,6 +2,8 @@ Kelp.Views.BusinessesIndex = Backbone.CompositeView.extend({
 	template: JST['businesses/index'],
 
 	initialize: function() {
+        this.mapMarkers = [];
+        
 		this.listenTo(
 			this.collection,
 			"add",
@@ -34,7 +36,8 @@ Kelp.Views.BusinessesIndex = Backbone.CompositeView.extend({
 				business.escape('longitude')
 			),
 			map: map,
-			title: business.escape('name')
+			title: business.escape('name'),
+            business_id: business.escape('id')
 		});	
 		this.addSubview('#businesses-list', businessesItem);
 	},
@@ -51,7 +54,7 @@ Kelp.Views.BusinessesIndex = Backbone.CompositeView.extend({
 	},
     
     centerMap: function() {
-        map.setCenter(new google.maps.LatLng(37.775, -122.419));
-        map.setZoom(11);
+        map.setCenter(new google.maps.LatLng(37.775, -122.434));
+        map.setZoom(12);
     },
 });

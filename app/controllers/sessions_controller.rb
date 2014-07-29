@@ -21,4 +21,10 @@ class SessionsController < ApplicationController
     sign_out!
     redirect_to new_user_url
   end
+  
+  def sign_in_guest
+    user = User.find_by(username: 'guest')
+    user && sign_in!(user)
+    redirect_to root_url
+  end
 end
