@@ -15,8 +15,11 @@ class UsersController < ApplicationController
   end  
   
   def index
-    @users = User.all
-    render json: @users
+    if signed_in?
+      redirect_to root_url
+    else
+      redirect_to new_user_url
+    end
   end
   
   def show

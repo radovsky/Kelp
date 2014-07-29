@@ -1,19 +1,69 @@
-<div id="sign-up-page">
+<div class="sign-up-page">
 
-    <div class ="background-image-form">
+    <div class="background-image-form">
 
-        <form action="/users" method="post" class="login form-inline">
+
+
+
+
+        <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#signupModal">
+            Create Account
+        </button>
+
+        <!-- Modal -->
+        <div class="modal fade" id="signupModal" tabindex="-1" role="dialog" aria-labelledby="signupModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                        <h4 class="modal-title" id="signupModalLabel">New Account</h4>
+                    </div>
+                    <form action="/users" method="post" class="login form-inline">
+                        <div class="modal-body">
+            
+                            <div class="form-group">
+                                <input class="form-control" type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+                                <input class="form-control" name="user[username]" type="text" placeholder="username">
+                                <input class="form-control" name="user[password]" type="password" placeholder="password">
+
+                            </div>
+            
+                        </div>
+                        <div class="modal-footer">
+                            <button type="submit" class="btn btn-default">Create Account</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+
+
+        <button class="btn btn-primary btn-lg" data-target="#guest-signin">
+            Login as Guest
+        </button>
+        
+        <form action="/users" method="post" class="login form-inline" id='guest-signin'>
             <div class="form-group">
                 <input class="form-control" type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
-                <input class="form-control" name="user[username]" type="text" placeholder="username">
-                <input class="form-control" name="user[password]" type="password" placeholder="password">
-               
+                <input class="form-control" name="user[username]" type="hidden" value="guest">
+                <input class="form-control" name="user[password]" type="hidden" value="password">
+                <input type="hidden" value='Submit'>
             </div>
-            <button type="submit" class="btn btn-default">Sign Up</button>
         </form>
-        
+
+
+
+
+
         <img class="background-image" src="https://s3-us-west-1.amazonaws.com/gaberadovsky/images/SanFranciscoDusk.jpg">
-        
+
     </div>
 
 </div>
+
+
