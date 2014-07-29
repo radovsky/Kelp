@@ -33,11 +33,11 @@ Kelp.Views.BusinessesFilter = Backbone.View.extend({
     initSlider: function() {
         this.$('#slider').slider({
             range: true,
-            min: 0,
-            max: 500,
+            min: 10,
+            max: 1000,
             values: [ 75, 300 ],
             slide: function( event, ui ) {
-                that.updateAmount(ui.values[ 0 ], ui.values[ 1 ]);
+                $( "#amount" ).val( "$" + ui.values[ 0 ] + " - $" + ui.values[ 1 ] );
             }
         });
     }
