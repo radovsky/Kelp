@@ -39,6 +39,16 @@ body, html {
 	font-family: 'Lato', sans-serif;
 }
 
+.background-image {
+    top:0;
+}
+
+.login {
+    top: 20%;
+    z-index:1000;
+}
+
+
 ul#businesses-list {
 	padding-start: 0px;
 	-moz-padding-start: 0px;
@@ -103,6 +113,11 @@ div#map-canvas {
 	box-shadow: -2px 2px 3px 0px rgba(0,0,0,0.3);
 	-moz-box-shadow: -2px 2px 3px 0px rgba(0,0,0,0.3);
 	-webkit-box-shadow: -2px 2px 3px 0px rgba(0,0,0,0.3);
+}
+
+.pricetag {
+    bottom: 50%;
+    z-index:1000;
 }
 
 div#content {

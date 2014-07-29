@@ -15,8 +15,8 @@
 	<%= flash[:errors].join("<br>") if flash[:errors] %>
 </head>
 
-<body>
-
+<body class="<%= @home_page ? 'homepage' : ''%>">
+<% if !@home_page %>
 	<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
 		
 		<div class="navbar-over-map">
@@ -95,6 +95,7 @@
 			</div>
 		</div>
 	</nav>
+    <% end %>
 
 	<div id='main-content'>
 		<%= yield %>

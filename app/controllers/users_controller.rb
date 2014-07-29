@@ -1,5 +1,7 @@
 class UsersController < ApplicationController
-  def new; end
+  def new
+    @home_page = true
+  end
   
   def create
     @user = User.new(user_params)
@@ -10,7 +12,7 @@ class UsersController < ApplicationController
       flash.now[:errors] = @user.errors.full_messages
       render :new
     end
-  end
+  end  
   
   def index
     @users = User.all

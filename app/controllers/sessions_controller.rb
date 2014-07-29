@@ -1,5 +1,7 @@
 class SessionsController < ApplicationController
-  def new; end
+  def new
+    @home_page = true
+  end
   
   def create
     user = User.find_by_credentials(

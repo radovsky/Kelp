@@ -13,6 +13,6 @@ Business.create(name: 'Baller-ass Penthouse', location: 'SOMA, San Francisco', d
 
 Business.create(name: 'Cozy Room for One', location: 'Alcatraz Island, San Francisco', description: "Memories you'll never escape!", category:'Terrible', price_range: '0', num_stars: '1.6', avatar: File.open('public/images/Alcatraz.jpg'))
 
-Business.create(name: 'Shared Room with Pets', location: 'Pier 39, San Francisco', description: "Hope you're not alergic!", category:'Ok', price_range: '99', num_stars: '4.4', avatar: File.open('public/images/sea_lions.jpg'))
+Business.create(name: 'Shared Room with Pets', location: 'Pier 39, San Francisco', description: "Hope you're not allergic!", category:'Ok', price_range: '99', num_stars: '4.4', avatar: File.open('public/images/sea_lions.jpg'))
 
 Business.create(name: 'There may or may not be Actual Treasure', location: 'Treasure Island, San Francisco', description: "100% guarantee there either is or isn't!", category:'Bad', price_range: '1275', num_stars: '2.2', avatar: File.open('public/images/tropical-island.jpg'))

@@ -3,6 +3,9 @@
 
 	<div class='business-avatar'>
 		<img class="avatar" src="<%= business.get('avatar_url') %>">
+        <div class='pricetag'>
+            $<%= business.escape('price_range') %>
+        </div>
 	</div>
 
 	<div class='business-name'>
