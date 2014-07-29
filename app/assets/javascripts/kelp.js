@@ -13,3 +13,14 @@ window.Kelp = {
 		Backbone.history.start();
 	}
 };
+
+$(function(){
+    var modalView = new Kelp.Views.BusinessesModalForm({
+        collection: Kelp.businesses,
+        model: new Kelp.Models.Business()
+    });
+    $('#modal-content').html(modalView.render().$el);
+    $('#new-listing-button').click(function(){
+        $('#new-listing-modal').modal();
+    });
+});

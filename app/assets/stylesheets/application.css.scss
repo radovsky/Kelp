@@ -37,6 +37,10 @@ body, html {
 	font-family: 'Lato', sans-serif;
 }
 
+.modal-content {
+    z-index:2000;
+}
+
 .background-image-form {
     background: url(https://s3-us-west-1.amazonaws.com/gaberadovsky/images/SanFranciscoDusk.jpg);
     min-height: 1065px;
@@ -156,6 +160,7 @@ a.navbar-brand {
 	background-color:white;
 	border:none;
 	font-family: avenir;
+    padding-right:30px
 }
 
 .navbar-over-map {
@@ -180,6 +185,11 @@ div#main-content {
 	border-bottom: thin solid rgba(0,0,0,0.1);
 	width: 98%;
 	margin: auto;
+     padding:20px;
+}
+
+.ui-slider {
+    width:50%;
 }
 
 .calendar-left, .calendar-right, select.guests {
