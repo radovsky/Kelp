@@ -6,7 +6,7 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-User.create(username: 'guest', password: 'password')
+User.create(username: 'guest', password: 'password', avatar: File.open('public/images/default-user.png'))
 
 Business.create(name: 'Beautiful Old Victorian', location: 'Haight/Ashbury, San Francisco', description: 'Bourgeonderful!', category:'Ok', price_range: '225', num_stars: '4.5', avatar: File.open('public/images/Haight_Ashbury11.JPG'))
 
