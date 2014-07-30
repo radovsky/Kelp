@@ -44,19 +44,18 @@ body, html {
 .background-image-form {
     background: url(https://s3-us-west-1.amazonaws.com/gaberadovsky/images/SanFranciscoDusk.jpg);
     min-height: 1065px;
-    min-width:1300px;
+    min-width:1500px;
     overflow:hidden;
     background-repeat: no-repeat;
     z-index:1000;
     padding:50px;
-    background-size: 100% auto
-    
+    background-size: 100% auto;
+    height:100%;
 }
 
 .underbar {
-    background-color:black;
+    background-color:rgba(0, 0, 0, 0.7);
     color:white;
-    
     bottom:0;
     z-axis:1;
     position:absolute;
@@ -188,11 +187,17 @@ div#main-content {
 	overflow:hidden;
 }
 
-.filter-calendar, .filter-price-range, .filter-room-type {
+.filter-calendar, .filter-room-type {
 	border-bottom: thin solid rgba(0,0,0,0.1);
 	width: 98%;
 	margin: auto;
-     padding:20px;
+    padding:20px;
+}
+
+.filter-price-range {
+	width: 98%;
+	margin: auto;
+    padding:20px;
 }
 
 .ui-slider {
@@ -232,6 +237,7 @@ div.filter-title {
 .show-info {
     display: inline-block;
     float:left;
+    padding-left:15px;
 }
 
 .reserve-button {
@@ -243,3 +249,11 @@ div.filter-title {
     overflow: hidden;
 }
 
+.business-avatar-show {
+    padding-left: 15px;
+    padding-right:15px;
+}
+
+#new-listing-button {
+    border:5px;
+}
