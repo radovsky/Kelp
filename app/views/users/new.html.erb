@@ -11,14 +11,45 @@
                         <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
                         <h4 class="modal-title" id="signupModalLabel">Welcome!</h4>
                     </div>
-                    <form action="/users" method="post" class="login form-inline">
+                    <form
+                        action="/users"
+                        method="post"
+                        class="login form-inline"
+                        enctype="multipart/form-data">
+                        
                         <div class="modal-body">
 
                             <div class="form-group">
-                                <input class="form-control" type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
-                                <input class="form-control" name="user[username]" type="text" placeholder="username">
-                                <input class="form-control" name="user[password]" type="password" placeholder="password">
-
+                                <input
+                                    class="form-control"
+                                    type="hidden"
+                                    name="authenticity_token"
+                                    value="<%= form_authenticity_token %>">
+                                <input
+                                    class="form-control"
+                                    name="user[username]"
+                                    type="text"
+                                    placeholder="username">
+                                    <br>
+                                <input
+                                    class="form-control"
+                                    name="user[password]"
+                                    type="password"
+                                    placeholder="password">
+                                    <br>
+                                <input
+                                    class="form-control"
+                                    name="user[location]"
+                                    type="text"
+                                    placeholder="Where do you live?">
+                                    <br>
+                                <textarea
+                                    class="form-control"
+                                    name=user[bio]
+                                    placeholder="Tell us a little bit about yourself.">
+                                </textarea>
+                                <br>
+                                <input type="file" class="form-control" name="user[avatar]">
                             </div>
 
                         </div>
