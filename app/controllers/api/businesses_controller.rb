@@ -43,7 +43,7 @@ module Api
     
     def show
       @business = Business.includes(:reviews).find(params[:id])
-      render json: @business, include: :reviews
+      render json: @business, methods: :avatar_url, include: :reviews
       
     end
     

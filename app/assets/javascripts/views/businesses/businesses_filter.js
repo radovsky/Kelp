@@ -31,6 +31,7 @@ Kelp.Views.BusinessesFilter = Backbone.View.extend({
     },
   
     initSlider: function() {
+        var that = this;
         this.$('#slider').slider({
             range: true,
             min: 0,
@@ -43,6 +44,9 @@ Kelp.Views.BusinessesFilter = Backbone.View.extend({
                      " - $" + 
                      ui.values[ 1 ] 
                  );
+            },
+            stop: function(event, ui) {
+                that.collection.trigger('filterRange', ui.values);
             }
         });
     }
