@@ -44,16 +44,23 @@ body, html {
 .background-image-form {
     background: url(https://s3-us-west-1.amazonaws.com/gaberadovsky/images/SanFranciscoDusk.jpg);
     min-height: 1065px;
-    min-width:100%;
+    min-width:1300px;
     overflow:hidden;
     background-repeat: no-repeat;
     z-index:1000;
     padding:50px;
+    background-size: 100% auto
+    
 }
 
 .underbar {
     background-color:black;
-    color:green;
+    color:white;
+    
+    bottom:0;
+    z-axis:1;
+    position:absolute;
+    width:100%;
 }
 
 .row-title {
@@ -231,3 +238,8 @@ div.filter-title {
     float:right;
     padding:15px;
 }
+
+.homepage {
+    overflow: hidden;
+}
+
