@@ -9,7 +9,9 @@ window.Kelp = {
 	
 		var $rootEl = $('#content');
         var $mapEl = $('#map-canvas');
-		new Kelp.Routers.AppRouter({root: $rootEl, map: $mapEl});
+		Kelp.mainRouter = new Kelp.Routers.AppRouter({
+            root: $rootEl, map: $mapEl
+        });
 		Backbone.history.start();
 	}
 };
@@ -23,4 +25,4 @@ $(function(){
     $('#new-listing-button').click(function(){
         $('#new-listing-modal').modal();
     });
-})
+});

@@ -28,6 +28,8 @@ Kelp.Views.BusinessesModalForm = Backbone.View.extend({
         this.model.save({}, {
             success: function(response) {
                 Kelp.businesses.add(that.model);
+                $('#new-listing-modal').modal('hide');
+                Kelp.mainRouter.navigate('#/businesses/' + that.model.get('id'));
             },
             error: function(model, response) {
                 alert(response.responseText);
