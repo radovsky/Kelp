@@ -16,7 +16,11 @@ Kelp.Routers.AppRouter = Backbone.Router.extend({
         var mapOptions = {
             center: new google.maps.LatLng(37.775, -122.419),
             zoom: 11,
-            disableDefaultUI: true
+            disableDefaultUI: true,
+            zoomControl: true,
+            zoomControlOptions: {
+                style: google.maps.ZoomControlStyle.SMALL
+            }
         };
         map = new google.maps.Map(this.$mapEl[0], mapOptions);
     },
