@@ -23,4 +23,4 @@ $(function(){
     $('#new-listing-button').click(function(){
         $('#new-listing-modal').modal();
     });
-});
+})

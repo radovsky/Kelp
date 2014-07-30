@@ -28,7 +28,6 @@ Kelp.Views.BusinessesModalForm = Backbone.View.extend({
         this.model.save({}, {
             success: function(response) {
                 Kelp.businesses.add(that.model);
-                alert("success!");
             },
             error: function(model, response) {
                 alert(response.responseText);

@@ -1,7 +1,7 @@
 Kelp.Views.ReviewsForm = Backbone.ButtonFormView.extend({
 	formTemplate: JST['reviews/form'],
 	buttonTemplate: JST['reviews/form_button'],
-	className: 'col-md-3',
+	className: 'col-sm-12',
 	
 	initialize: function(options) {
 		this.business = options.business;
