@@ -6,8 +6,9 @@
     <h3 class='business-name'>
         <%= business.escape('name') %>
     </h3>
+    
 
-    <div class='business-location'>
+    <div class='business-location-show'>
         Location: <%= business.escape('location') %>
     </div>
 
@@ -16,7 +17,7 @@
     </div>
 
     <div class='business-price_range'>
-        Price Range: <%= business.escape('price_range') %>
+        Price per Night: $<%= business.escape('price_range') %>
     </div>
 
     <div id='new-review-button'></div>

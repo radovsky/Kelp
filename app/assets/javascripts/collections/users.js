@@ -3,7 +3,7 @@ Kelp.Collections.Users = Backbone.Collection.extend({
 	
 	model: Kelp.Models.User,
 	
-	getOrFetch: function(id) {
+	getOrFetch: function(id, callback) {
 		var users = this;
 		var user;
 		
@@ -14,6 +14,7 @@ Kelp.Collections.Users = Backbone.Collection.extend({
 			user.fetch({
 				success: function() {
 					users.add(user);
+                    callback();
 				}
 			});
 		}

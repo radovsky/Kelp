@@ -3,12 +3,6 @@ Kelp.Views.BusinessesIndex = Backbone.CompositeView.extend({
 
     initialize: function() {
         this.mapMarkers = [];
-        
-        this.listenTo(
-            this.collection,
-            'sync',
-            this.render
-        );
 
         this.listenTo(
             this.collection,

@@ -6,7 +6,14 @@ Kelp.Views.BusinessesItem = Backbone.View.extend({
 	className: 'businesses-item col-sm-12 col-md-6',
 	
 	initialize: function() {
-		
+        this.user = Kelp.users.getOrFetch(this.model.attributes.user_id);
+        
+        this.listenTo(
+            this.user,
+            'all',
+            this.render
+        )
+
 		this.listenTo(
 			this.model,
 			'sync',
@@ -17,7 +24,7 @@ Kelp.Views.BusinessesItem = Backbone.View.extend({
 	render: function() {
 		var renderedContent = this.template({
 			business: this.model,
-            user: Kelp.users.getOrFetch(this.model.attributes.user_id)
+            user: this.user
 		});
 		this.$el.html(renderedContent);
 		return this;

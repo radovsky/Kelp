@@ -242,8 +242,9 @@ div.filter-title {
 }
 
 .reserve-button {
-    float:right;
+    right: 5px;
     padding:15px;
+    position:absolute;
 }
 
 .homepage {
@@ -263,10 +264,20 @@ div.filter-title {
     border-radius: 35px;
     -webkit-border-radius: 35px;
     -moz-border-radius: 35px;
-    padding-top: 5px;
+    height: 40px;
 }
 
+.navbar-right {
+    padding-top:5px;
+}
 
+#new-listing-button {
+    height:100%;
+}
+
+select.guests {
+    height: 30px;
+}
 
 .user-avatar-thumb {
     border-radius: 50px;
@@ -276,5 +287,26 @@ div.filter-title {
     position:absolute;
     right:3%;
     bottom:50px;
+	box-shadow: -2px 2px 3px 0px rgba(0,0,0,0.3);
+	-moz-box-shadow: -2px 2px 3px 0px rgba(0,0,0,0.3);
+	-webkit-box-shadow: -2px 2px 3px 0px rgba(0,0,0,0.3);
+}
 
+input[type='checkbox'] {
+    -webkit-appearance:none;
+    width:20px;
+    height:20px;
+    background:white;
+    border-radius:3px;
+    margin:5px;
+    margin-left:10px;
+    border:1px solid #aaaaaa;
+}
+input[type='checkbox']:checked {
+    background: #e2e2e2;
+}
+
+label {
+    font-weight:normal;
+    font-family: 'Lato', sans-serif;
 }

@@ -47,7 +47,10 @@ Kelp.Views.BusinessesFilter = Backbone.View.extend({
                 }
             });
             that.checkBoxes = this._checkedBoxes;
-            that.collection.trigger('filters', [that.checkBoxes, that.sliderValues]);
+            that.collection.trigger(
+                'filters',
+                [that.checkBoxes, that.sliderValues]
+            );
         });
     },
   
@@ -68,10 +71,10 @@ Kelp.Views.BusinessesFilter = Backbone.View.extend({
                      ui.values[ 1 ]
                 );
                 that.sliderValues = ui.values;
-            },
-            
-            stop: function(event, ui) {
-                that.collection.trigger('filters', [that.checkBoxes, that.sliderValues]);
+                that.collection.trigger(
+                    'filters',
+                    [that.checkBoxes, that.sliderValues]
+                );
             }
         });
     }
