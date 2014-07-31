@@ -16,7 +16,7 @@ class User < ActiveRecord::Base
   validates :username, :password_digest, presence: true
   validates :password, length: { minimum: 8, allow_nil: true }
   
-  has_attached_file :avatar, :styles => { :medium => "300x300>", :thumb => "50x50>" }, :default_url => "/public/logo.jpg"
+  has_attached_file :avatar, :styles => { :medium => "75x75#", :thumb => "50x50#" }, :default_url => "/public/logo.jpg"
    validates_attachment_content_type :avatar, :content_type => /\Aimage\/.*\Z/
    
    def avatar_url

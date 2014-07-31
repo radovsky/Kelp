@@ -96,6 +96,7 @@ div.business-name {
 	text-overflow:ellipsis;
 	padding-left: 15px;
 	padding-top: 15px;
+    width:75%;
 }
 
 a.business-link {
@@ -263,4 +264,17 @@ div.filter-title {
     -webkit-border-radius: 35px;
     -moz-border-radius: 35px;
     padding-top: 5px;
+}
+
+
+
+.user-avatar-thumb {
+    border-radius: 50px;
+    -webkit-border-radius: 50px;
+    -moz-border-radius: 50px;
+    z-index: 1000;
+    position:absolute;
+    right:3%;
+    bottom:50px;
+
 }

@@ -1,5 +1,5 @@
 ##laissez-fairebnb
-It's like airbnb but 100% unregulated! Sleep in a luxurious mansion, or just a van down by the river. Gold and Bitcoin accepted.
+It's like airbnb but 100% unregulated! Sleep in luxury beyond your wildest dreams, or just a van down by the river. Gold and Bitcoin accepted.
 
 ####Built with:
 - Ruby on Rails
@@ -8,7 +8,7 @@ It's like airbnb but 100% unregulated! Sleep in a luxurious mansion, or just a v
 - HTML
 - CSS
 - Bootstrap
-- Google Maps API JavaScript V3
+- Google Maps JavaScript API
 - etc.
 
 Visit us at [laissez-fairebnb.com](http://www.laissez-fairebnb.com/).

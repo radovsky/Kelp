@@ -15,10 +15,9 @@ Kelp.Views.BusinessesItem = Backbone.View.extend({
 	},
 	
 	render: function() {
-        debugger;
 		var renderedContent = this.template({
-			business: this.model
-            
+			business: this.model,
+            user: Kelp.users.getOrFetch(this.model.attributes.user_id)
 		});
 		this.$el.html(renderedContent);
 		return this;

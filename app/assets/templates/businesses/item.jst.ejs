@@ -6,7 +6,12 @@
         <div class='pricetag'>
             $<%= business.escape('price_range') %>
         </div>
+
+        <img class='user-avatar-thumb' src='<%= user.get('avatar_url') %>'>
+
 	</div>
+    
+
 
 	<div class='business-name'>
 		<%= business.escape('name') %>
