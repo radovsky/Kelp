@@ -21,6 +21,7 @@ Kelp.Views.BusinessesIndex = Backbone.CompositeView.extend({
             'removeMarkers',
             this.removeMapMarkers
         );
+         
 
         var businessFilter = new Kelp.Views.BusinessesFilter({
             collection: this.collection
@@ -37,6 +38,11 @@ Kelp.Views.BusinessesIndex = Backbone.CompositeView.extend({
 
         this.centerMap();
     },
+    
+    events: {
+        'mouseenter a.business-link': 'itemViewHover',
+        'mouseleave a.business-link': 'itemViewLeave'
+    },
 
     addBusiness: function(business) {
         var businessesItem = new Kelp.Views.BusinessesItem({
@@ -51,6 +57,7 @@ Kelp.Views.BusinessesIndex = Backbone.CompositeView.extend({
             title: business.escape('name'),
             business_id: business.escape('id')
         });	
+        marker.setIcon('http://maps.google.com/mapfiles/ms/icons/red-dot.png')
         mapMarkers.push(marker);
         this.addSubview('#businesses-list', businessesItem);
     },
@@ -124,4 +131,23 @@ Kelp.Views.BusinessesIndex = Backbone.CompositeView.extend({
         map.setCenter(new google.maps.LatLng(37.775, -122.434));
         map.setZoom(12);
     },
+    
+    itemViewHover: function(event) {
+        var ctid = event.currentTarget.id;
+        
+        mapMarkers.forEach(function(m) {
+            if (ctid === m.business_id) {
+                m.setIcon('http://maps.google.com/mapfiles/ms/icons/green-dot.png');
+            }
+        });
+    },
+    
+    itemViewLeave: function(event) {
+        var ctid = event.currentTarget.id;
+        mapMarkers.forEach(function(m) {
+            if (ctid === m.business_id) {
+                m.setIcon('http://maps.google.com/mapfiles/ms/icons/red-dot.png');
+            }
+        });
+    }
 });
