@@ -2,7 +2,7 @@ Kelp.Views.BusinessesIndex = Backbone.CompositeView.extend({
     template: JST['businesses/index'],
 
     initialize: function() {
-        mapMarkers = [];
+        this.mapMarkers = [];
 
         this.listenTo(
             this.collection,
@@ -43,25 +43,31 @@ Kelp.Views.BusinessesIndex = Backbone.CompositeView.extend({
         'mouseenter a.business-link': 'itemViewHover',
         'mouseleave a.business-link': 'itemViewLeave'
     },
-
-    addBusiness: function(business) {
-        var businessesItem = new Kelp.Views.BusinessesItem({
-            model: business
-        });
+    
+    addMarker: function(business){
+        var existingMarker = _.find(this.mapMarkers, 
+            function(marker){
+                return marker.business_id === business.id;
+            }
+        );
+        if(existingMarker){
+            return;
+        }
         var marker = new google.maps.Marker({
             position: new google.maps.LatLng(
                 business.escape('latitude'), 
                 business.escape('longitude')
             ),
             map: map,
-            title: business.escape('name'),
-            business_id: business.escape('id'),
-            url: '#businesses/' + business.escape('id')
+            title: business.escape('name') + "\n" +
+            "Price " + business.escape('price_range'),
+            business_id: business.id,
+            url: '#businesses/' + business.id
         });	
         marker.setIcon(
             'http://maps.google.com/mapfiles/ms/icons/red-dot.png'
         );
-        mapMarkers.push(marker);
+        
         google.maps.event.addListener(
             marker,
             'click',
@@ -87,13 +93,24 @@ Kelp.Views.BusinessesIndex = Backbone.CompositeView.extend({
                 );
             }
         );
+        this.mapMarkers.push(marker);  
+    },
+
+    addBusiness: function(business) {
+        var businessesItem = new Kelp.Views.BusinessesItem({
+            model: business
+        });
+        this.addMarker(business);
+      
+
         this.addSubview('#businesses-list', businessesItem);
     },
     
     removeMapMarkers: function() {
-        for(i = 0; i < mapMarkers.length; i++){
-                mapMarkers[i].setMap(null);
-            }
+        for (i = 0; i < this.mapMarkers.length; i++) {
+            this.mapMarkers[i].setMap(null);
+        }
+        this.mapMarkers = [];
     },
     
     filterByFilters: function(input) {
@@ -106,9 +123,11 @@ Kelp.Views.BusinessesIndex = Backbone.CompositeView.extend({
     filterByCheckboxes: function(checkedBoxes) {
         this.cb = checkedBoxes;
         var that = this;
+
         this.collection.each(function(model) {
             if (that.cb.indexOf(model.attributes.category) !== -1) {
                 that._filteredCollection.push(model);
+
             }
         });
     },
@@ -133,6 +152,7 @@ Kelp.Views.BusinessesIndex = Backbone.CompositeView.extend({
         while(subviews.length > 0) {
             this.removeSubview('#businesses-list', subviews[0]);
         }
+        
         if (this._filteredCollection) {
             this._filteredCollection.forEach(function(model) {
                 that.addBusiness(model);
@@ -154,6 +174,11 @@ Kelp.Views.BusinessesIndex = Backbone.CompositeView.extend({
         this.attachSubviews();
         return this;
     },
+    
+    remove: function(){
+        this.removeMapMarkers();
+        Backbone.CompositeView.prototype.remove.call(this);
+    },
 
     centerMap: function() {
         map.setCenter(new google.maps.LatLng(37.775, -122.434));
@@ -162,9 +187,9 @@ Kelp.Views.BusinessesIndex = Backbone.CompositeView.extend({
     
     itemViewHover: function(event) {
         var ctid = event.currentTarget.id;
-        
-        mapMarkers.forEach(function(m) {
-            if (ctid === m.business_id) {
+        console.log(this.mapMarkers.length);
+        this.mapMarkers.forEach(function(m) {
+            if (ctid == m.business_id) {
                 m.setIcon(
                     'http://maps.google.com/mapfiles/ms/icons/green-dot.png'
                 );
@@ -174,8 +199,8 @@ Kelp.Views.BusinessesIndex = Backbone.CompositeView.extend({
     
     itemViewLeave: function(event) {
         var ctid = event.currentTarget.id;
-        mapMarkers.forEach(function(m) {
-            if (ctid === m.business_id) {
+        this.mapMarkers.forEach(function(m) {
+            if (ctid == m.business_id) {
                 m.setIcon(
                     'http://maps.google.com/mapfiles/ms/icons/red-dot.png'
                 );
