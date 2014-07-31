@@ -2,7 +2,7 @@ Kelp.Views.BusinessesIndex = Backbone.CompositeView.extend({
     template: JST['businesses/index'],
 
     initialize: function() {
-        this.mapMarkers = [];
+        mapMarkers = [];
 
         this.listenTo(
             this.collection,
@@ -45,10 +45,18 @@ Kelp.Views.BusinessesIndex = Backbone.CompositeView.extend({
             title: business.escape('name'),
             business_id: business.escape('id')
         });	
+        mapMarkers.push(marker);
         this.addSubview('#businesses-list', businessesItem);
     },
     
+    removeMapMarkers: function() {
+        for(i = 0; i < mapMarkers.length; i++){
+                mapMarkers[i].setMap(null);
+            }
+    },
+    
     filterByFilters: function(input) {
+        this.removeMapMarkers();
         this._filteredCollection = [];
         this.filterByCheckboxes(input[0]);
         this.filterByRange(input[1]);
