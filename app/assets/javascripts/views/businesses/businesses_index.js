@@ -55,10 +55,38 @@ Kelp.Views.BusinessesIndex = Backbone.CompositeView.extend({
             ),
             map: map,
             title: business.escape('name'),
-            business_id: business.escape('id')
+            business_id: business.escape('id'),
+            url: '#businesses/' + business.escape('id')
         });	
-        marker.setIcon('http://maps.google.com/mapfiles/ms/icons/red-dot.png')
+        marker.setIcon(
+            'http://maps.google.com/mapfiles/ms/icons/red-dot.png'
+        );
         mapMarkers.push(marker);
+        google.maps.event.addListener(
+            marker,
+            'click',
+            function() {
+                window.location.href = marker.url;
+            }
+        );
+        google.maps.event.addListener(
+            marker,
+            'mouseover',
+            function() {
+                marker.setIcon(
+                    'http://maps.google.com/mapfiles/ms/icons/green-dot.png'
+                );
+            }
+        );
+        google.maps.event.addListener(
+            marker,
+            'mouseout',
+            function() {
+                marker.setIcon(
+                    'http://maps.google.com/mapfiles/ms/icons/red-dot.png'
+                );
+            }
+        );
         this.addSubview('#businesses-list', businessesItem);
     },
     
@@ -137,7 +165,9 @@ Kelp.Views.BusinessesIndex = Backbone.CompositeView.extend({
         
         mapMarkers.forEach(function(m) {
             if (ctid === m.business_id) {
-                m.setIcon('http://maps.google.com/mapfiles/ms/icons/green-dot.png');
+                m.setIcon(
+                    'http://maps.google.com/mapfiles/ms/icons/green-dot.png'
+                );
             }
         });
     },
@@ -146,7 +176,9 @@ Kelp.Views.BusinessesIndex = Backbone.CompositeView.extend({
         var ctid = event.currentTarget.id;
         mapMarkers.forEach(function(m) {
             if (ctid === m.business_id) {
-                m.setIcon('http://maps.google.com/mapfiles/ms/icons/red-dot.png');
+                m.setIcon(
+                    'http://maps.google.com/mapfiles/ms/icons/red-dot.png'
+                );
             }
         });
     }
