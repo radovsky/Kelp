@@ -4,7 +4,7 @@ It's like airbnb but 100% unregulated! Sleep in luxury beyond your wildest dream
 ####Built with:
 - Ruby on Rails
 - Backbone.js
-- JQuery.ui
+- JQuery
 - HTML
 - CSS
 - Bootstrap

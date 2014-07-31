@@ -237,15 +237,17 @@ div.filter-title {
 }
 
 .show-info {
-    display: inline-block;
-    float:left;
+    position:absolute;
     padding-left:15px;
+    left:0;
+    right:180px;
 }
 
 .reserve-button {
     right: 5px;
+    float:right;
     padding:15px;
-    position:absolute;
+    display:inline-block;
 }
 
 .homepage {
