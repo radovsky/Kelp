@@ -49,11 +49,9 @@ Kelp.Views.BusinessesIndex = Backbone.CompositeView.extend({
     },
     
     filterByFilters: function(input) {
-        // console.log(input);
         this._filteredCollection = [];
         this.filterByCheckboxes(input[0]);
         this.filterByRange(input[1]);
-        // console.log(this._filteredCollection);
         this.resetSubviews();
     },
 
