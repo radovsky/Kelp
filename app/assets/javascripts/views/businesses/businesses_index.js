@@ -12,8 +12,8 @@ Kelp.Views.BusinessesIndex = Backbone.CompositeView.extend({
 
         this.listenTo(
             this.collection,
-            'filterRange',
-            this.filterByRange.bind(this)
+            'filters',
+            this.filterByFilters.bind(this)
         );
 
         var businessFilter = new Kelp.Views.BusinessesFilter({
@@ -47,32 +47,46 @@ Kelp.Views.BusinessesIndex = Backbone.CompositeView.extend({
         });	
         this.addSubview('#businesses-list', businessesItem);
     },
-
-    filterByRange: function(values) {
-        var that = this;
+    
+    filterByFilters: function(input) {
+        // console.log(input);
         this._filteredCollection = [];
-       
-        // alert('filter me! ' + values);
-        var minValue = values[0];
-        var maxValue = values[1];
+        this.filterByCheckboxes(input[0]);
+        this.filterByRange(input[1]);
+        // console.log(this._filteredCollection);
+        this.resetSubviews();
+    },
+
+    filterByCheckboxes: function(checkedBoxes) {
+        this.cb = checkedBoxes;
+        var that = this;
         this.collection.each(function(model) {
-            var price = model.attributes.price_range;
-            if (price >= minValue && price <= maxValue) {
+            if (that.cb.indexOf(model.attributes.category) !== -1) {
                 that._filteredCollection.push(model);
             }
         });
-        this.resetSubviews();
-        // this._filteredCollection = null;
+    },
+
+    filterByRange: function(values) {
+        var that = this;
+        var newFilteredCollection = [];
+        var minValue = values[0];
+        var maxValue = values[1];
+        this._filteredCollection.forEach(function(model) {
+            var price = model.attributes.price_range;
+            if (price >= minValue && price <= maxValue) {
+                newFilteredCollection.push(model);
+            }
+        });
+        this._filteredCollection = newFilteredCollection;
     },
 
     resetSubviews: function() {
         var that = this;
         var subviews = this.subviews('#businesses-list');
         while(subviews.length > 0) {
-            this.removeSubview('#businesses-list', subviews[0])
+            this.removeSubview('#businesses-list', subviews[0]);
         }
-        
-        // debugger;
         if (this._filteredCollection) {
             this._filteredCollection.forEach(function(model) {
                 that.addBusiness(model);

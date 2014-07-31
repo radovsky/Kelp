@@ -1,5 +1,10 @@
 Kelp.Views.BusinessesFilter = Backbone.View.extend({
     template: JST['businesses/filter'],
+    
+    initialize: function() {
+        this.checkBoxes = ["Mansion/Penthouse", "Private Room", "Shack/Hovel"];
+        this.sliderValues = [0, 1000];
+    },
 	
     render: function() {
         var renderedContent = this.template({
@@ -7,6 +12,7 @@ Kelp.Views.BusinessesFilter = Backbone.View.extend({
         });
         this.$el.html(renderedContent);
         this.initSlider();
+        this.initCheckboxes();
         this.initDatePickers();
         return this;
     },
@@ -29,6 +35,21 @@ Kelp.Views.BusinessesFilter = Backbone.View.extend({
             this.$('#start').datepicker('setEndDate', event.date);
         });
     },
+    
+    initCheckboxes: function() {
+        var that = this;
+        this.$(".checkbox-inline").change(function() {
+            var that2 = this;
+            this._checkedBoxes = [];
+            that.$('input[type=checkbox]').each(function() {
+                if (this.checked) {
+                    that2._checkedBoxes.push(this.id);
+                }
+            });
+            that.checkBoxes = this._checkedBoxes;
+            that.collection.trigger('filters', [that.checkBoxes, that.sliderValues]);
+        });
+    },
   
     initSlider: function() {
         var that = this;
@@ -38,15 +59,19 @@ Kelp.Views.BusinessesFilter = Backbone.View.extend({
             max: 1000,
             values: [ 0, 1000 ],
             slide: function( event, ui ) {
-                $( "#amount" ).val(
+                $(
+                    "#amount"
+                ).val(
                      "$" + 
                      ui.values[ 0 ] + 
                      " - $" + 
-                     ui.values[ 1 ] 
-                 );
+                     ui.values[ 1 ]
+                );
+                that.sliderValues = ui.values;
             },
+            
             stop: function(event, ui) {
-                that.collection.trigger('filterRange', ui.values);
+                that.collection.trigger('filters', [that.checkBoxes, that.sliderValues]);
             }
         });
     }
