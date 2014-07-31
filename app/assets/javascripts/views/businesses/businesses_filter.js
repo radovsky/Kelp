@@ -47,6 +47,7 @@ Kelp.Views.BusinessesFilter = Backbone.View.extend({
                 }
             });
             that.checkBoxes = this._checkedBoxes;
+            that.collection.trigger('removeMarkers');
             that.collection.trigger(
                 'filters',
                 [that.checkBoxes, that.sliderValues]
@@ -61,7 +62,7 @@ Kelp.Views.BusinessesFilter = Backbone.View.extend({
             min: 0,
             max: 1000,
             values: [ 0, 1000 ],
-            slide: function( event, ui ) {
+            slide: function(event, ui) {
                 $(
                     "#amount"
                 ).val(
@@ -71,6 +72,13 @@ Kelp.Views.BusinessesFilter = Backbone.View.extend({
                      ui.values[ 1 ]
                 );
                 that.sliderValues = ui.values;
+                that.collection.trigger(
+                    'filters',
+                    [that.checkBoxes, that.sliderValues]
+                );
+            },
+            stop: function(event, ui) {
+                that.collection.trigger('removeMarkers');
                 that.collection.trigger(
                     'filters',
                     [that.checkBoxes, that.sliderValues]

@@ -15,6 +15,12 @@ Kelp.Views.BusinessesIndex = Backbone.CompositeView.extend({
             'filters',
             this.filterByFilters.bind(this)
         );
+        
+        this.listenTo(
+            this.collection,
+            'removeMarkers',
+            this.removeMapMarkers
+        );
 
         var businessFilter = new Kelp.Views.BusinessesFilter({
             collection: this.collection
@@ -56,7 +62,6 @@ Kelp.Views.BusinessesIndex = Backbone.CompositeView.extend({
     },
     
     filterByFilters: function(input) {
-        this.removeMapMarkers();
         this._filteredCollection = [];
         this.filterByCheckboxes(input[0]);
         this.filterByRange(input[1]);
