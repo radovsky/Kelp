@@ -12,7 +12,7 @@
 #
 
 class Review < ActiveRecord::Base
-  validates :user_id, :business_id, :num_stars, :description, presence: true
+  validates :user_id, :business_id, :description, presence: true
   
   belongs_to :user
   belongs_to :business

@@ -60,7 +60,8 @@ Kelp.Views.BusinessesIndex = Backbone.CompositeView.extend({
             ),
             map: map,
             title: business.escape('name') + "\n" +
-            "Price " + business.escape('price_range'),
+                   business.escape('category') + "\n" +
+                   "Price per Night: $" + business.escape('price_range'),
             business_id: business.id,
             url: '#businesses/' + business.id
         });	
