@@ -15,6 +15,7 @@ gem "paperclip", "~> 4.1"
 gem 'aws-sdk'
 gem 'figaro'
 gem 'geocoder'
+gem 'newrelic_rpm'
 
 group :doc do
   gem 'sdoc', require: false
