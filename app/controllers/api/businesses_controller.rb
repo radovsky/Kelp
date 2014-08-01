@@ -12,6 +12,7 @@ module Api
     
     def create
       @business = Business.new(business_params)
+      @business.user_id = current_user.id
       if @business.save
         render json: @business, methods: :avatar_url
       else
