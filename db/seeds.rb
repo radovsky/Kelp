@@ -320,30 +320,30 @@ Review.create(
 	)
 
 
-dungeon = Business.create(
-	name: 'Festive Dungeon', 
-	location: 'The Castro, San Francisco', 
-	description: "Don't forget the safeword!", 
-	category: 'Mansion/Penthouse', 
-	price_range: '750', 
-	num_stars: '5', 
-	avatar: File.open(
-		'public/images/dungeon.jpg'
-		), 
-	user_id: gimp.id
-	)
-
-Review.create(
-	business_id: dungeon.id,
-	user_id: cashcat.id,
-	description: 'never again'
-	)
-
-Review.create(
-	business_id: dungeon.id,
-	user_id: steve.id,
-	description: 'thank you sir may I have another? ;)'
-	)
+# dungeon = Business.create(
+#   name: 'Festive Dungeon',
+#   location: 'The Castro, San Francisco',
+#   description: "Don't forget the safeword!",
+#   category: 'Mansion/Penthouse',
+#   price_range: '750',
+#   num_stars: '5',
+#   avatar: File.open(
+#     'public/images/dungeon.jpg'
+#     ),
+#   user_id: gimp.id
+#   )
+#
+# Review.create(
+#   business_id: dungeon.id,
+#   user_id: cashcat.id,
+#   description: 'never again'
+#   )
+#
+# Review.create(
+#   business_id: dungeon.id,
+#   user_id: steve.id,
+#   description: 'thank you sir may I have another? ;)'
+#   )
 
 
 aa = Business.create(
