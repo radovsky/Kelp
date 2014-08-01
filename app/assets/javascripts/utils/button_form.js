@@ -4,8 +4,7 @@ Backbone.ButtonFormView = Backbone.View.extend({
 	events: {
 		'click button': 'showForm',
 		'click .close': 'hideForm',
-		'submit': 'create',
-		'keydown textarea': 'createOnEnter'
+		'submit': 'create'
 	},
 
 	render: function() {

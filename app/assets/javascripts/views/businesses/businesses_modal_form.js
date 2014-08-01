@@ -28,14 +28,16 @@ Kelp.Views.BusinessesModalForm = Backbone.View.extend({
         btn.text('Loading...');
         btn.attr('disabled', 'disabled');
         var that = this;
-        this.model.save({}, {
+        that.model.save({}, {
             success: function(response) {
-                Kelp.businesses.add(that.model);
+                $('#new-listing-modal').on('hidden.bs.modal', function(){
+                    Kelp.businesses.add(that.model);
+                    Kelp.mainRouter.navigate(
+                        '#/businesses/' + that.model.get('id')
+                    );
+                    that.remove();
+                });
                 $('#new-listing-modal').modal('hide');
-                Kelp.mainRouter.navigate(
-                    '#/businesses/' + that.model.get('id')
-                );
-                that.remove();
             },
             error: function(model, response) {
                 that.$('.errors').html(response.responseJSON.join("<br>"));
@@ -43,6 +45,6 @@ Kelp.Views.BusinessesModalForm = Backbone.View.extend({
                 btn.removeAttr('disabled');
                 btn.text('Get it right this time!')
             }
-        });
+        });         
     }
 });
