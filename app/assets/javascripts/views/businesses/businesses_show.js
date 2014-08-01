@@ -34,6 +34,7 @@ Kelp.Views.BusinessesShow = Backbone.CompositeView.extend({
             model: review
         });
         this.addSubview('.reviews', reviewsShow);
+        this.render();
     },
     
     centerMap: function() {

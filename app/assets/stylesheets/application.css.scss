@@ -313,3 +313,11 @@ label {
     font-weight:normal;
     font-family: 'Lato', sans-serif;
 }
+
+#new-listing-modal div.errors {
+    display: none;
+}
+
+#new-listing-modal div.errors.show {
+    display: block;
+}

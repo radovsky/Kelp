@@ -8,7 +8,7 @@
             </div>
             <form action="api/businesses" method="post" id="new-listing-form" class="form-inline" enctype="multipart/form-data">
                 <div class="modal-body">
-            
+                    <div class='errors alert alert-danger' role="alert"></div>
                     <div class="form-group">
                         <input 
                         type='text' 
@@ -25,12 +25,11 @@
                         name='location'
                         placeholder="Location">
                         <br><br>
-                        <input
-                        type='text'
-                        class='form-control'
-                        id='category'
-                        name='category'
-                        placeholder="Category">
+                		<select class='form-control' id='category' name='category'>
+                            <option value='Mansion/Penthouse'>Mansion/Penthouse</option>
+                            <option value='Private Room'>Private Room</option>
+                            <option value='Shack/Hovel'>Shack/Hovel</option>  
+                        </select>
                         <br><br>
                         <input
                         type="number"
@@ -45,12 +44,18 @@
                         name='description'
                         placeholder="Please describe your space."></textarea>
                         <br><br>
+                        Upload a Photo!<br>
                         <input type="file" class="form-control" name="avatar" id="avatar">
                     </div>
             
                 </div>
                 <div class="modal-footer">
-                    <button type="submit" class="btn btn-default btn-success">Create Listing</button>
+                    <button 
+                        type="submit" 
+                        class="btn btn-default btn-success" 
+                        id='submit-button'>
+                        Create Listing
+                    </button>
                 </div>
             </form>
         </div>

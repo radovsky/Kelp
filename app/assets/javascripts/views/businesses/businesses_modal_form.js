@@ -24,15 +24,24 @@ Kelp.Views.BusinessesModalForm = Backbone.View.extend({
         event.preventDefault();
         var opts = $(event.target).serializeJSON();
         this.model.set(opts, { wait: true });
+        var btn = this.$('#submit-button')
+        btn.text('Loading...');
+        btn.attr('disabled', 'disabled');
         var that = this;
         this.model.save({}, {
             success: function(response) {
                 Kelp.businesses.add(that.model);
                 $('#new-listing-modal').modal('hide');
-                Kelp.mainRouter.navigate('#/businesses/' + that.model.get('id'));
+                Kelp.mainRouter.navigate(
+                    '#/businesses/' + that.model.get('id')
+                );
+                that.remove();
             },
             error: function(model, response) {
-                alert(response.responseText);
+                that.$('.errors').html(response.responseJSON.join("<br>"));
+                that.$('.errors').addClass('show')
+                btn.removeAttr('disabled');
+                btn.text('Get it right this time!')
             }
         });
     }
