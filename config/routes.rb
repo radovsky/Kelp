@@ -4,8 +4,8 @@ Rails.application.routes.draw do
   
   get '/siginin-guest' => 'sessions#sign_in_guest', as: :sign_in_guest
   
-  resource :session, only: [:new, :create, :destroy]
-  resources :users
+  resource :session, only: [:create, :destroy]
+  resources :users, except: [:index]
   
   namespace :api, defaults: { format: :json } do
     resources :businesses, except: [:new, :edit]

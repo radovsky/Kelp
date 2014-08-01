@@ -1,7 +1,11 @@
 <div class="sign-up-page">
     <div class="background-image-form">
-        <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#signupModal">
-            Create Account
+        <button class="btn btn-frontpage btn-primary btn-lg" data-toggle="modal" data-target="#signupModal">
+            Sign Up
+        </button>
+
+        <button class="btn btn-frontpage btn-primary btn-lg" data-toggle="modal" data-target="#signinModal">
+            Sign In
         </button>
 
         <div class="modal fade" id="signupModal" tabindex="-1" role="dialog" aria-labelledby="signupModalLabel" aria-hidden="true">
@@ -58,8 +62,42 @@
             </div>
         </div>
 
-        <a href="/siginin-guest" class="btn btn-primary btn-lg" data-target="#guest-signin">
-            Login as Guest
+
+
+        <div class="modal fade" id="signinModal" tabindex="-1" role="dialog" aria-labelledby="signinModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                        <h4 class="modal-title" id="signinModalLabel">Welcome Back!</h4>
+                    </div>
+                    <form
+                        action="/session"
+                        method="post"
+                        class="login form-inline"
+                        enctype="multipart/form-data">
+                        
+                        <div class="modal-body">
+
+                            <div class="form-group">
+                                <input class="form-control" type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+                                <input class="form-control" name="user[username]" type="text" placeholder="username"><br><br>
+                                <input class="form-control" name="user[password]" type="password" placeholder="password"><br>
+                            </div>
+
+                        </div>
+                        <div class="modal-footer">
+                            <button type="submit" class="btn btn-default">Log In</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+
+
+        <a href="/siginin-guest" class="btn btn-frontpage btn-danger btn-lg" data-target="#guest-signin">
+            Sign In as Guest
         </a>
 
         <form action="/users" method="post" class="login form-inline" id='guest-signin'>
@@ -70,6 +108,10 @@
                 <input type="hidden" value='Submit'>
             </div>
         </form>
+
+        <div class="flash-errors">
+            <%= flash[:errors].join("<br>") if flash[:errors] %>
+        </div>
     </div>
 
     <div class="underbar">
