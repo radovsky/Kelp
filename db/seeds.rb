@@ -6,7 +6,7 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-guest = User.create(
+guest = User.create!(
 	username: 'guest', 
 	password: 'password', 
 	avatar: File.open(
@@ -14,7 +14,7 @@ guest = User.create(
 		)
 	)
 
-hipster = User.create(
+hipster = User.create!(
 	username: 'Jed', 
 	password: 'password', 
 	avatar: File.open(
@@ -22,7 +22,7 @@ hipster = User.create(
 		)
 	)
 
-hobo = User.create(
+hobo = User.create!(
 	username: 'Felix', 
 	password: 'password', 
 	avatar: File.open(
@@ -30,7 +30,7 @@ hobo = User.create(
 		)
 	)
 
-salad_girl = User.create(
+salad_girl = User.create!(
 	username: 'Fiona', 
 	password: 'password', 
 	avatar: File.open(
@@ -38,7 +38,7 @@ salad_girl = User.create(
 		)
 	)
 
-cashcat = User.create(
+cashcat = User.create!(
 	username: 'Mortimer', 
 	password: 'password', 
 	avatar: File.open(
@@ -46,7 +46,7 @@ cashcat = User.create(
 		)
 	)
 
-gimp = User.create(
+gimp = User.create!(
 	username: 'GIMP', 
 	password: 'password', 
 	avatar: File.open(
@@ -54,7 +54,7 @@ gimp = User.create(
 		)
 	)
 
-steve = User.create(
+steve = User.create!(
 	username: 'Steve', 
 	password: 'password', 
 	avatar: File.open(
@@ -62,7 +62,7 @@ steve = User.create(
 		)
 	)
 
-frida = User.create(
+frida = User.create!(
 	username: 'Frida', 
 	password: 'password', 
 	avatar: File.open(
@@ -70,7 +70,7 @@ frida = User.create(
 		)
 	)
 
-gabe = User.create(
+gabe = User.create!(
 	username: 'Gabe', 
 	password: 'password', 
 	avatar: File.open(
@@ -78,7 +78,7 @@ gabe = User.create(
 		)
 	)
 
-mark = User.create(
+mark = User.create!(
 	username: 'Mark', 
 	password: 'password', 
 	avatar: File.open(
@@ -86,7 +86,7 @@ mark = User.create(
 		)
 	)
 
-donna = User.create(
+donna = User.create!(
 	username: 'Donna', 
 	password: 'password', 
 	avatar: File.open(
@@ -94,7 +94,7 @@ donna = User.create(
 		)
 	)
 
-victorian = Business.create(
+victorian = Business.create!(
 	name: 'Beautiful Old Victorian', 
 	location: 'Haight/Ashbury, San Francisco', 
 	description: 'Bourgeonderful!', 
@@ -107,19 +107,19 @@ victorian = Business.create(
 	user_id: hipster.id
 	)
 
-Review.create(
+Review.create!(
 	business_id: victorian.id,
 	user_id: cashcat.id,
 	description: 'Quaint.'
 	)
 
-Review.create(
+Review.create!(
 	business_id: victorian.id,
 	user_id: salad_girl.id,
 	description: 'It was so darling!'
 	)
 
-Review.create(
+Review.create!(
 	business_id: victorian.id,
 	user_id: gimp.id,
 	description: 'mmfmfmfmfmmmmmm'
@@ -127,7 +127,7 @@ Review.create(
 
 
 
-shed = Business.create(
+shed = Business.create!(
 	name: 'Rustic Shed', 
 	location: 'Golden Gate Bridge, San Francisco', 
 	description: 'Urban glamping at its finest!', 
@@ -140,20 +140,20 @@ shed = Business.create(
 	user_id: salad_girl.id
 	)
 
-Review.create(
+Review.create!(
 	business_id: shed.id,
 	user_id: hobo.id,
 	description: "I've slept worse places, BELIEVE ME."
 	)
 
-Review.create(
+Review.create!(
 	business_id: shed.id,
 	user_id: hipster.id,
 	description: "That place used to be cool but it's so crowded now."
 	)
 
 
-baller = Business.create(
+baller = Business.create!(
 	name: 'Baller-ass Penthouse', 
 	location: 'SOMA, San Francisco', 
 	description: 'Sleep someplace better than all your friends!', 
@@ -166,20 +166,20 @@ baller = Business.create(
 	user_id: cashcat.id
 	)
 
-Review.create(
+Review.create!(
 	business_id: baller.id,
 	user_id: frida.id,
 	description: 'some seriously coked-up weekends there'
 	)
 
-Review.create(
+Review.create!(
 	business_id: baller.id,
 	user_id: mark.id,
 	description: 'shit is crazy'
 	)
 
 
-alcatraz = Business.create(
+alcatraz = Business.create!(
 	name: 'Cozy Room for One', 
 	location: 'Alcatraz Island, San Francisco', 
 	description: "Memories you'll never escape!", 
@@ -192,14 +192,14 @@ alcatraz = Business.create(
 	user_id: steve.id
 	)
 
-Review.create(
+Review.create!(
 	business_id: alcatraz.id,
 	user_id: mark.id,
 	description: 'never again'
 	)
 
 
-sealions = Business.create(
+sealions = Business.create!(
 	name: 'Shared Room with Pets', 
 	location: 'Pier 39, San Francisco', 
 	description: "Hope you're not allergic!", 
@@ -212,19 +212,19 @@ sealions = Business.create(
 	user_id: hobo.id
 	)
 
-Review.create(
+Review.create!(
 	business_id: sealions.id,
 	user_id: cashcat.id,
 	description: "Those sea lions can't even do tricks. What a waste of time."
 	)
 
-Review.create(
+Review.create!(
 	business_id: sealions.id,
 	user_id: hobo.id,
 	description: 'AMAZING'
 	)
 
-treasure = Business.create(
+treasure = Business.create!(
 	name: 'There may or may not be Actual Treasure', 
 	location: 'Treasure Island, San Francisco', 
 	description: "100% guarantee there either is or isn't!", 
@@ -237,19 +237,19 @@ treasure = Business.create(
 	user_id: donna.id
 	)
 
-Review.create(
+Review.create!(
 	business_id: treasure.id,
 	user_id: mark.id,
 	description: "DON'T GO HERE THERE IS NO TREASURE"
 	)
 
-Review.create(
+Review.create!(
 	business_id: treasure.id,
 	user_id: salad_girl.id,
 	description: "It's totally a metaphor, the treasure is within you!"
 	)
 
-coit = Business.create(
+coit = Business.create!(
 	name: 'Extremely Cramped Penthouse', 
 	location: 'Coit Tower, San Francisco', 
 	description: "Come for the view, stay because there's a two-hour wait to take the elevator back down!", 
@@ -262,19 +262,19 @@ coit = Business.create(
 	user_id: cashcat.id
 	)
 
-Review.create(
+Review.create!(
 	business_id: coit.id,
 	user_id: steve.id,
 	description: "It's too phallic, it made me uncomfortable."
 	)
 
-Review.create(
+Review.create!(
 	business_id: coit.id,
 	user_id: cashcat.id,
 	description: 'Feeling inadequate, Steve?'
 	)
 
-lemurs = Business.create(
+lemurs = Business.create!(
 	name: 'Lemur Paradise', 
 	location: 'San Francisco Zoo', 
 	description: "You'll go bug-eyed when you see it.", 
@@ -287,20 +287,20 @@ lemurs = Business.create(
 	user_id: frida.id
 	)
 
-Review.create(
+Review.create!(
 	business_id: lemurs.id,
 	user_id: cashcat.id,
 	description: 'SO CUTE!!!!'
 	)
 
-Review.create(
+Review.create!(
 	business_id: lemurs.id,
 	user_id: hobo.id,
 	description: 'Those lemurs were delicious!'
 	)
 
 
-burrito = Business.create(
+burrito = Business.create!(
 	name: 'Burrito Shop Storeroom', 
 	location: 'Mission District, San Francsico', 
 	description: 'Muy chico y un poco sucio, pero viene con comida gratis.', 
@@ -313,40 +313,40 @@ burrito = Business.create(
 	user_id: hobo.id
 	)
 
-Review.create(
+Review.create!(
 	business_id: burrito.id,
 	user_id: hobo.id,
 	description: 'those burritos gave me HEARTBURN'
 	)
 
 
-# dungeon = Business.create(
-#   name: 'Festive Dungeon',
-#   location: 'The Castro, San Francisco',
-#   description: "Don't forget the safeword!",
-#   category: 'Mansion/Penthouse',
-#   price_range: '750',
-#   num_stars: '5',
-#   avatar: File.open(
-#     'public/images/dungeon.jpg'
-#     ),
-#   user_id: gimp.id
-#   )
-#
-# Review.create(
-#   business_id: dungeon.id,
-#   user_id: cashcat.id,
-#   description: 'never again'
-#   )
-#
-# Review.create(
-#   business_id: dungeon.id,
-#   user_id: steve.id,
-#   description: 'thank you sir may I have another? ;)'
-#   )
+dungeon = Business.create!(
+  name: 'Festive Dungeon',
+  location: 'The Castro, San Francisco',
+  description: "Don't forget the safeword!",
+  category: 'Mansion/Penthouse',
+  price_range: '750',
+  num_stars: '5',
+  avatar: File.open(
+    'public/images/dungeon.jpg'
+    ),
+  user_id: gimp.id
+  )
+
+Review.create!(
+  business_id: dungeon.id,
+  user_id: cashcat.id,
+  description: 'never again'
+  )
+
+Review.create!(
+  business_id: dungeon.id,
+  user_id: steve.id,
+  description: 'thank you sir may I have another? ;)'
+  )
 
 
-aa = Business.create(
+aa = Business.create!(
 	name: 'Air Mattress on Coding Bootcamp Floor', 
 	location: 'Mid-Market, San Francisco', 
 	description: "You'll live like a migrant laborer for 12 weeks but you'll learn a fuckton!", 
@@ -359,14 +359,14 @@ aa = Business.create(
 	user_id: gabe.id
 	)
 
-Review.create(
+Review.create!(
 	business_id: aa.id,
 	user_id: hipster.id,
 	description: "I hear they don't even teach Spectangular.js, so lame. It's this really obscure framework, you've probably never heard of it."
 	)
 
 
-facebook = Business.create(
+facebook = Business.create!(
 	name: 'Need Money Bad', 
 	location: 'Dolores Heights, San Francisco', 
 	description: "Help me finance my expensive tastes!", 
@@ -379,7 +379,7 @@ facebook = Business.create(
 	user_id: mark.id
 	)
 
-Review.create(
+Review.create!(
 	business_id: facebook.id,
 	user_id: cashcat.id,
 	description: "This place has really gone downhill."
