@@ -245,7 +245,7 @@ Review.create(
 
 Review.create(
 	business_id: treasure.id,
-	user_id: fiona.id,
+	user_id: salad_girl.id,
 	description: "It's totally a metaphor, the treasure is within you!"
 	)
 
@@ -342,7 +342,7 @@ Review.create(
 Review.create(
 	business_id: dungeon.id,
 	user_id: steve.id,
-	description: 'please sir may I have another? ;)'
+	description: 'thank you sir may I have another? ;)'
 	)
 
 

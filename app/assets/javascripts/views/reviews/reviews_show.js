@@ -2,6 +2,8 @@ Kelp.Views.ReviewsShow = Backbone.View.extend({
 	template: JST['reviews/show'],
 	
 	tagname: 'li',
+
+	className: "list-group-item",
 	
 	initialize: function() {
 		
