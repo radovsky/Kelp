@@ -116,7 +116,6 @@ Kelp.Views.BusinessesIndex = Backbone.CompositeView.extend({
     },
     
     filterByFilters: function(input) {
-        this.shuffleCollection();
         this._filteredCollection = [];
         this.filterByCheckboxes(input[0]);
         this.filterByRange(input[1]);
@@ -189,7 +188,6 @@ Kelp.Views.BusinessesIndex = Backbone.CompositeView.extend({
     
     itemViewHover: function(event) {
         var ctid = event.currentTarget.id;
-        console.log(this.mapMarkers.length);
         this.mapMarkers.forEach(function(m) {
             if (ctid == m.business_id) {
                 m.setIcon(

@@ -6,7 +6,6 @@
     <h3 class='business-name'>
         <%= business.escape('name') %>
     </h3>
-    
 
     <div class='business-location-show'>
         Location: <%= business.escape('location') %>
@@ -20,9 +19,14 @@
         Price per Night: $<%= business.escape('price_range') %>
     </div>
 
+    <div class='business-owner'>
+        Your Host: <%= user.escape('username') %><br>
+        <img class='owner-avatar' src="<%= user.get('avatar_url') %>">
+    </div>
+    <ul class='reviews'></ul>
+    <br><br>
     <div id='new-review-button'></div>
     <br><br><br>
-    <ul class='reviews'></ul>
 </div>
 <div class='reserve-button'>
     <a href="http://lnkd.in/2yiksZ" class="btn btn-danger btn-lg">

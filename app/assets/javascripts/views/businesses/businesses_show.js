@@ -2,6 +2,7 @@ Kelp.Views.BusinessesShow = Backbone.CompositeView.extend({
     template: JST['businesses/show'],
 	
     initialize: function() {
+        this.user = Kelp.users.getOrFetch(this.model.attributes.user_id);
         this.mapMarkers = [];
         
         this.listenTo(
@@ -12,9 +13,10 @@ Kelp.Views.BusinessesShow = Backbone.CompositeView.extend({
 		
         this.listenTo(
             this.model.reviews(),
-            'add',
+            'add sync',
             this.addReview
         );
+
 	
         var businessReviews = new Kelp.Collections.BusinessReviews([], {
             business: this.model
@@ -34,7 +36,6 @@ Kelp.Views.BusinessesShow = Backbone.CompositeView.extend({
             model: review
         });
         this.addSubview('.reviews', reviewsShow);
-        this.render();
     },
     
     centerMap: function() {
@@ -70,7 +71,8 @@ Kelp.Views.BusinessesShow = Backbone.CompositeView.extend({
 	
     render: function() {
         var renderedContent = this.template({
-            business: this.model
+            business: this.model,
+            user: this.user
         });
         this.$el.html(renderedContent);
         this.attachSubviews();

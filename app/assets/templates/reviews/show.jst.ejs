@@ -1,13 +1,8 @@
 <h3 class='review-name'>
-	Review from <a href='#/users/<%= user.id %>'>
-		<%= user.escape('username') %>
-	</a>
+	Review from <%= user.escape('username') %>
+	<img class='user-avatar-review-thumb' src='<%= user.get('avatar_thumb_url') %>'>
 </h3>
 
 <div class='review-user'>
 	Description: <%= review.escape('description') %>
-</div>
-
-<div class='review-business'>
-	Rating: <%= review.escape('num_stars') %>
 </div>

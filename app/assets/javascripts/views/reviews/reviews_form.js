@@ -11,7 +11,8 @@ Kelp.Views.ReviewsForm = Backbone.ButtonFormView.extend({
 	create: function(event) {
 		event.preventDefault();
 		var opts = $(event.target).serializeJSON();
-		opts.business_id = this.business.id
+		opts.business_id = this.business.id;
+		debugger;
 		this.collection.create(opts, { wait: true });
 	}
 });

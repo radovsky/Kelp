@@ -107,6 +107,26 @@ victorian = Business.create(
 	user_id: hipster.id
 	)
 
+Review.create(
+	business_id: victorian.id,
+	user_id: cashcat.id,
+	description: 'Quaint.'
+	)
+
+Review.create(
+	business_id: victorian.id,
+	user_id: salad_girl.id,
+	description: 'It was so darling!'
+	)
+
+Review.create(
+	business_id: victorian.id,
+	user_id: gimp.id,
+	description: 'mmfmfmfmfmmmmmm'
+	)
+
+
+
 shed = Business.create(
 	name: 'Rustic Shed', 
 	location: 'Golden Gate Bridge, San Francisco', 
@@ -119,6 +139,19 @@ shed = Business.create(
 		), 
 	user_id: salad_girl.id
 	)
+
+Review.create(
+	business_id: shed.id,
+	user_id: hobo.id,
+	description: "I've slept worse places, BELIEVE ME."
+	)
+
+Review.create(
+	business_id: shed.id,
+	user_id: hipster.id,
+	description: "That place used to be cool but it's so crowded now."
+	)
+
 
 baller = Business.create(
 	name: 'Baller-ass Penthouse', 
@@ -133,6 +166,19 @@ baller = Business.create(
 	user_id: cashcat.id
 	)
 
+Review.create(
+	business_id: baller.id,
+	user_id: frida.id,
+	description: 'some seriously coked-up weekends there'
+	)
+
+Review.create(
+	business_id: baller.id,
+	user_id: mark.id,
+	description: 'shit is crazy'
+	)
+
+
 alcatraz = Business.create(
 	name: 'Cozy Room for One', 
 	location: 'Alcatraz Island, San Francisco', 
@@ -146,6 +192,13 @@ alcatraz = Business.create(
 	user_id: steve.id
 	)
 
+Review.create(
+	business_id: alcatraz.id,
+	user_id: mark.id,
+	description: 'never again'
+	)
+
+
 sealions = Business.create(
 	name: 'Shared Room with Pets', 
 	location: 'Pier 39, San Francisco', 
@@ -157,6 +210,18 @@ sealions = Business.create(
 		'public/images/sea_lions.jpg'
 		), 
 	user_id: hobo.id
+	)
+
+Review.create(
+	business_id: sealions.id,
+	user_id: cashcat.id,
+	description: "Those sea lions can't even do tricks. What a waste of time."
+	)
+
+Review.create(
+	business_id: sealions.id,
+	user_id: hobo.id,
+	description: 'AMAZING'
 	)
 
 treasure = Business.create(
@@ -172,6 +237,18 @@ treasure = Business.create(
 	user_id: donna.id
 	)
 
+Review.create(
+	business_id: treasure.id,
+	user_id: mark.id,
+	description: "DON'T GO HERE THERE IS NO TREASURE"
+	)
+
+Review.create(
+	business_id: treasure.id,
+	user_id: fiona.id,
+	description: "It's totally a metaphor, the treasure is within you!"
+	)
+
 coit = Business.create(
 	name: 'Extremely Cramped Penthouse', 
 	location: 'Coit Tower, San Francisco', 
@@ -183,6 +260,18 @@ coit = Business.create(
 		'public/images/coit_tower.jpg' 
 		), 
 	user_id: cashcat.id
+	)
+
+Review.create(
+	business_id: coit.id,
+	user_id: steve.id,
+	description: "It's too phallic, it made me uncomfortable."
+	)
+
+Review.create(
+	business_id: coit.id,
+	user_id: cashcat.id,
+	description: 'Feeling inadequate, Steve?'
 	)
 
 lemurs = Business.create(
@@ -198,6 +287,19 @@ lemurs = Business.create(
 	user_id: frida.id
 	)
 
+Review.create(
+	business_id: lemurs.id,
+	user_id: cashcat.id,
+	description: 'SO CUTE!!!!'
+	)
+
+Review.create(
+	business_id: lemurs.id,
+	user_id: hobo.id,
+	description: 'Those lemurs were delicious!'
+	)
+
+
 burrito = Business.create(
 	name: 'Burrito Shop Storeroom', 
 	location: 'Mission District, San Francsico', 
@@ -210,6 +312,13 @@ burrito = Business.create(
 		), 
 	user_id: hobo.id
 	)
+
+Review.create(
+	business_id: burrito.id,
+	user_id: hobo.id,
+	description: 'those burritos gave me HEARTBURN'
+	)
+
 
 dungeon = Business.create(
 	name: 'Festive Dungeon', 
@@ -224,6 +333,19 @@ dungeon = Business.create(
 	user_id: gimp.id
 	)
 
+Review.create(
+	business_id: dungeon.id,
+	user_id: cashcat.id,
+	description: 'never again'
+	)
+
+Review.create(
+	business_id: dungeon.id,
+	user_id: steve.id,
+	description: 'please sir may I have another? ;)'
+	)
+
+
 aa = Business.create(
 	name: 'Air Mattress on Coding Bootcamp Floor', 
 	location: 'Mid-Market, San Francisco', 
@@ -237,6 +359,13 @@ aa = Business.create(
 	user_id: gabe.id
 	)
 
+Review.create(
+	business_id: aa.id,
+	user_id: hipster.id,
+	description: "I hear they don't even teach Spectangular.js, so lame. It's this really obscure framework, you've probably never heard of it."
+	)
+
+
 facebook = Business.create(
 	name: 'Need Money Bad', 
 	location: 'Dolores Heights, San Francisco', 
@@ -248,4 +377,10 @@ facebook = Business.create(
 		'public/images/zuck_house.jpg'
 		), 
 	user_id: mark.id
+	)
+
+Review.create(
+	business_id: facebook.id,
+	user_id: cashcat.id,
+	description: "This place has really gone downhill."
 	)
