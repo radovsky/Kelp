@@ -1,12 +1,29 @@
 <div class="sign-up-page">
     <div class="background-image-form">
-        <button class="btn btn-frontpage btn-primary btn-lg" data-toggle="modal" data-target="#signupModal">
-            Sign Up
-        </button>
+        
+        <div class='logo'>
+            <h1 id="logo">LAISSEZ-FAIREBNB</h1>
+            Completely unregulated. Gold and Bitcoin accepted. Go Crazy.
+        </div>
+        
+        <div class="flash-errors">
+            <%= flash[:errors].join(". ") if flash[:errors] %>
+        </div>
+        
+        <div class='homepage-buttons'>
+            <button class="btn btn-frontpage btn-primary btn-lg" data-toggle="modal" data-target="#signupModal">
+                Sign Up
+            </button>
 
-        <button class="btn btn-frontpage btn-primary btn-lg" data-toggle="modal" data-target="#signinModal">
-            Sign In
-        </button>
+            <button class="btn btn-frontpage btn-primary btn-lg" data-toggle="modal" data-target="#signinModal">
+                Sign In
+            </button><br><br>
+        
+            <a href="/siginin-guest" class="btn btn-frontpage btn-danger btn-lg" data-target="#guest-signin">
+                Sign In as Guest
+            </a><br>
+            
+        </div>
 
         <div class="modal fade" id="signupModal" tabindex="-1" role="dialog" aria-labelledby="signupModalLabel" aria-hidden="true">
             <div class="modal-dialog">
@@ -16,153 +33,145 @@
                         <h4 class="modal-title" id="signupModalLabel">Welcome!</h4>
                     </div>
                     <form
-                        action="/users"
-                        method="post"
-                        class="login form-inline"
-                        enctype="multipart/form-data">
+                    action="/users"
+                    method="post"
+                    class="login form-inline"
+                    enctype="multipart/form-data">
                         
-                        <div class="modal-body">
+                    <div class="modal-body">
 
-                            <div class="form-group">
-                                <input
-                                    class="form-control"
-                                    type="hidden"
-                                    name="authenticity_token"
-                                    value="<%= form_authenticity_token %>">
-                                <input
-                                    class="form-control"
-                                    name="user[username]"
-                                    type="text"
-                                    placeholder="username">
-                                    <br><br>
-                                <input
-                                    class="form-control"
-                                    name="user[password]"
-                                    type="password"
-                                    placeholder="password">
-                                    <br><br>
-                                <input
-                                    class="form-control"
-                                    name="user[location]"
-                                    type="text"
-                                    placeholder="Where do you live?">
-                                    <br><br>
-                                <textarea class="form-control" name=user[bio] placeholder="Tell us a little bit about yourself."></textarea>
-                                <br><br>
-                                Upload a photo!<br>
-                                <input type="file" class="form-control" name="user[avatar]">
-                            </div>
-
+                        <div class="form-group">
+                            <input
+                            class="form-control"
+                            type="hidden"
+                            name="authenticity_token"
+                            value="<%= form_authenticity_token %>">
+                            <input
+                            class="form-control"
+                            name="user[username]"
+                            type="text"
+                            placeholder="username">
+                            <br><br>
+                            <input
+                            class="form-control"
+                            name="user[password]"
+                            type="password"
+                            placeholder="password">
+                            <br><br>
+                            <input
+                            class="form-control"
+                            name="user[location]"
+                            type="text"
+                            placeholder="Where do you live?">
+                            <br><br>
+                            <textarea class="form-control" name=user[bio] placeholder="Tell us a little bit about yourself."></textarea>
+                            <br><br>
+                            Upload a photo!<br>
+                            <input type="file" class="form-control" name="user[avatar]">
                         </div>
-                        <div class="modal-footer">
-                            <button type="submit" class="btn btn-default">Create Account</button>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
 
-
-
-        <div class="modal fade" id="signinModal" tabindex="-1" role="dialog" aria-labelledby="signinModalLabel" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-                        <h4 class="modal-title" id="signinModalLabel">Welcome Back!</h4>
                     </div>
-                    <form
-                        action="/session"
-                        method="post"
-                        class="login form-inline"
-                        enctype="multipart/form-data">
-                        
-                        <div class="modal-body">
+                    <div class="modal-footer">
+                        <button type="submit" class="btn btn-default">Create Account</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
 
-                            <div class="form-group">
-                                <input class="form-control" type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
-                                <input class="form-control" name="user[username]" type="text" placeholder="username"><br><br>
-                                <input class="form-control" name="user[password]" type="password" placeholder="password"><br>
-                            </div>
 
-                        </div>
-                        <div class="modal-footer">
-                            <button type="submit" class="btn btn-default">Log In</button>
-                        </div>
-                    </form>
+
+    <div class="modal fade" id="signinModal" tabindex="-1" role="dialog" aria-labelledby="signinModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                    <h4 class="modal-title" id="signinModalLabel">Welcome Back!</h4>
                 </div>
-            </div>
-        </div>
+                <form
+                action="/session"
+                method="post"
+                class="login form-inline"
+                enctype="multipart/form-data">
+                        
+                <div class="modal-body">
 
+                    <div class="form-group">
+                        <input class="form-control" type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+                        <input class="form-control" name="user[username]" type="text" placeholder="username"><br><br>
+                        <input class="form-control" name="user[password]" type="password" placeholder="password"><br>
+                    </div>
 
-
-        <a href="/siginin-guest" class="btn btn-frontpage btn-danger btn-lg" data-target="#guest-signin">
-            Sign In as Guest
-        </a>
-
-        <form action="/users" method="post" class="login form-inline" id='guest-signin'>
-            <div class="form-group">
-                <input class="form-control" type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
-                <input class="form-control" name="user[username]" type="hidden" value="guest">
-                <input class="form-control" name="user[password]" type="hidden" value="password">
-                <input type="hidden" value='Submit'>
-            </div>
-        </form>
-
-        <div class="flash-errors">
-            <%= flash[:errors].join("<br>") if flash[:errors] %>
-        </div>
-    </div>
-
-    <div class="underbar">
-        <div class=col-xs-2></div>
-        <div class=col-xs-3>
-            <div class="row row-title">
-                Company
-            </div>
-            <div class="row row-link">
-                <a class="homepage-link" href="http://lnkd.in/2yiksZ">About</a>
-            </div>
-            <div class="row row-link">
-                <a class="homepage-link" href="http://lnkd.in/2yiksZ">Jobs</a>
-            </div>
-            <div class="row row-link">
-                <a class="homepage-link" href="http://lnkd.in/2yiksZ">Press</a>
-            </div>
-            <div class="row row-link">
-                <a class="homepage-link" href="http://lnkd.in/2yiksZ">Blog</a>
-            </div>
-        </div>
-        <div class=col-xs-3>
-            <div class="row row-title">
-                Help
-            </div>
-            <div class="row row-link">
-                <a class="homepage-link" href="http://lnkd.in/2yiksZ">Help Center</a>
-            </div>
-            <div class="row row-link">
-                <a class="homepage-link" href="http://lnkd.in/2yiksZ">Basics</a>
-            </div>
-            <div class="row row-link">
-                <a class="homepage-link" href="http://lnkd.in/2yiksZ">FAQ</a>
-            </div>
-            <div class="row row-link">
-                <a class="homepage-link" href="http://lnkd.in/2yiksZ">Forums</a>
-            </div>
-        </div>
-        <div class=col-xs-3>
-            <div class="row row-title">
-                Contact
-            </div>
-            <div class="row row-link">
-                <a class="homepage-link" href="http://lnkd.in/2yiksZ">Email</a>
-            </div>
-            <div class="row row-link">
-                <a class="homepage-link" href="http://lnkd.in/2yiksZ">Call</a>
-            </div>
-            <div class="row row-link">
-                <a class="homepage-link" href="http://lnkd.in/2yiksZ">Visit</a>
-            </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-default">Log In</button>
+                </div>
+            </form>
         </div>
     </div>
+</div>
+
+
+<form action="/users" method="post" class="login form-inline" id='guest-signin'>
+    <div class="form-group">
+        <input class="form-control" type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+        <input class="form-control" name="user[username]" type="hidden" value="guest">
+        <input class="form-control" name="user[password]" type="hidden" value="password">
+        <input type="hidden" value='Submit'>
+    </div>
+</form>
+
+</div>
+
+<div class="underbar">
+<div class=col-xs-2></div>
+<div class=col-xs-3>
+    <div class="row row-title">
+        Company
+    </div>
+    <div class="row row-link">
+        <a class="homepage-link" href="http://lnkd.in/2yiksZ">About</a>
+    </div>
+    <div class="row row-link">
+        <a class="homepage-link" href="http://lnkd.in/2yiksZ">Jobs</a>
+    </div>
+    <div class="row row-link">
+        <a class="homepage-link" href="http://lnkd.in/2yiksZ">Press</a>
+    </div>
+    <div class="row row-link">
+        <a class="homepage-link" href="http://lnkd.in/2yiksZ">Blog</a>
+    </div>
+</div>
+<div class=col-xs-3>
+    <div class="row row-title">
+        Help
+    </div>
+    <div class="row row-link">
+        <a class="homepage-link" href="http://lnkd.in/2yiksZ">Help Center</a>
+    </div>
+    <div class="row row-link">
+        <a class="homepage-link" href="http://lnkd.in/2yiksZ">Basics</a>
+    </div>
+    <div class="row row-link">
+        <a class="homepage-link" href="http://lnkd.in/2yiksZ">FAQ</a>
+    </div>
+    <div class="row row-link">
+        <a class="homepage-link" href="http://lnkd.in/2yiksZ">Forums</a>
+    </div>
+</div>
+<div class=col-xs-3>
+    <div class="row row-title">
+        Contact
+    </div>
+    <div class="row row-link">
+        <a class="homepage-link" href="http://lnkd.in/2yiksZ">Email</a>
+    </div>
+    <div class="row row-link">
+        <a class="homepage-link" href="http://lnkd.in/2yiksZ">Call</a>
+    </div>
+    <div class="row row-link">
+        <a class="homepage-link" href="http://lnkd.in/2yiksZ">Visit</a>
+    </div>
+</div>
+</div>
 </div>

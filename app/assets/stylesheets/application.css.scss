@@ -334,3 +334,31 @@ label {
 div.list-group-item {
     width: 300px;
 }
+
+h1#logo {
+    color: white;
+    font-weight:bold;
+    font-family: 'PT Sans';
+}
+
+div.logo {
+    color:white;
+    display:inline-block;
+}
+
+div.homepage-buttons {
+//    display:inline-block;
+    position:absolute;
+    right:65px;
+    top:65px;
+}
+
+a.btn-frontpage {
+    width: 184px;
+}
+
+div.flash-errors {
+    position: absolute;
+    top: 5px;
+    right:65px;
+}
