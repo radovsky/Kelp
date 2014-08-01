@@ -22,7 +22,6 @@ Kelp.Views.BusinessesIndex = Backbone.CompositeView.extend({
             this.removeMapMarkers
         );
          
-
         var businessFilter = new Kelp.Views.BusinessesFilter({
             collection: this.collection
         });
@@ -42,6 +41,10 @@ Kelp.Views.BusinessesIndex = Backbone.CompositeView.extend({
     events: {
         'mouseenter a.business-link': 'itemViewHover',
         'mouseleave a.business-link': 'itemViewLeave'
+    },
+
+    shuffleCollection: function() {
+        this.collection.reset(this.collection.shuffle(), {silent:true});
     },
     
     addMarker: function(business){
@@ -102,8 +105,6 @@ Kelp.Views.BusinessesIndex = Backbone.CompositeView.extend({
             model: business
         });
         this.addMarker(business);
-      
-
         this.addSubview('#businesses-list', businessesItem);
     },
     
@@ -115,6 +116,7 @@ Kelp.Views.BusinessesIndex = Backbone.CompositeView.extend({
     },
     
     filterByFilters: function(input) {
+        this.shuffleCollection();
         this._filteredCollection = [];
         this.filterByCheckboxes(input[0]);
         this.filterByRange(input[1]);
@@ -128,7 +130,6 @@ Kelp.Views.BusinessesIndex = Backbone.CompositeView.extend({
         this.collection.each(function(model) {
             if (that.cb.indexOf(model.attributes.category) !== -1) {
                 that._filteredCollection.push(model);
-
             }
         });
     },
