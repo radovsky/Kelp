@@ -15,22 +15,24 @@
 class User < ActiveRecord::Base
   validates :username, :password_digest, presence: true
   validates :password, length: { minimum: 8, allow_nil: true }
-  
-  has_attached_file :avatar, :styles => { :medium => "300x300#", :thumb => "75x75#" }, :default_url => "/images/default-user.jpg"
-   validates_attachment_content_type :avatar, :content_type => /\Aimage\/.*\Z/
-   
-   def avatar_url
-     avatar.url(:medium)
-   end
-   
-   def avatar_thumb_url
-     avatar.url(:thumb)
-   end
-  
+
   attr_reader :password
   
   has_many :reviews
   has_many :businesses
+  
+  has_attached_file :avatar, :styles => {
+    :medium => "300x300#", :thumb => "75x75#"
+  }, :default_url => "/images/default-user.jpg"
+  validates_attachment_content_type :avatar, :content_type => /\Aimage\/.*\Z/
+   
+  def avatar_url
+    avatar.url(:medium)
+  end
+   
+  def avatar_thumb_url
+    avatar.url(:thumb)
+  end
   
   after_initialize :ensure_session_token
   

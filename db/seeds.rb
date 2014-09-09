@@ -382,3 +382,22 @@ Review.create!(
 	user_id: cashcat.id,
 	description: "This place has really gone downhill."
 )
+
+diagonal = Business.create!(
+  name: 'Diagonal Shanty',
+  location: 'Bernal Heights, San Francisco',
+  description: 'Straps will be provided to fasten yourself into bed.',
+  category: 'Shack/Hovel',
+  price_range: '48',
+  num_stars: '5',
+  avatar: File.open(
+    'public/images/diagonal.jpg'
+  ),
+  user_id: donna.id
+)
+
+Review.create!(
+  business_id: diagonal.id,
+  user_id: salad_girl.id,
+  description: 'I fell out the window in my sleep. I COULD HAVE DIED.'
+)

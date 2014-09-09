@@ -1,53 +1,53 @@
-// All credit for these goes to Ned Ruggeri.
+// All credit for these goes to Ned Ruggeri (and Thoughtbot).
 
 Backbone.CompositeView = Backbone.View.extend({
-  addSubview: function (selector, subview) {
-    this.subviews(selector).push(subview);
-    this.attachSubview(selector, subview.render());
-  },
+    addSubview: function (selector, subview) {
+        this.subviews(selector).push(subview);
+        this.attachSubview(selector, subview.render());
+    },
 
-  attachSubview: function (selector, subview) {
-    this.$(selector).append(subview.$el);
-    subview.delegateEvents();
-	if (subview.attachSubviews) {
-		subview.attachSubviews();
-	}
-  },
+    attachSubview: function (selector, subview) {
+        this.$(selector).append(subview.$el);
+        subview.delegateEvents();
+        if (subview.attachSubviews) {
+            subview.attachSubviews();
+        }
+    },
 
-  attachSubviews: function () {
-    var view = this;
-    _(this.subviews()).each(function (subviews, selector) {
-      view.$(selector).empty();
-      _(subviews).each(function (subview) {
-        view.attachSubview(selector, subview);
-      });
-    });
-  },
+    attachSubviews: function () {
+        var view = this;
+        _(this.subviews()).each(function (subviews, selector) {
+            view.$(selector).empty();
+            _(subviews).each(function (subview) {
+                view.attachSubview(selector, subview);
+            });
+        });
+    },
 
-  remove: function () {
-    Backbone.View.prototype.remove.call(this);
-    _(this.subviews()).each(function (subviews) {
-      _(subviews).each(function (subview) {
+    remove: function () {
+        Backbone.View.prototype.remove.call(this);
+        _(this.subviews()).each(function (subviews) {
+            _(subviews).each(function (subview) {
+                subview.remove();
+            });
+        });
+    },
+
+    removeSubview: function (selector, subview) {
         subview.remove();
-      });
-    });
-  },
 
-  removeSubview: function (selector, subview) {
-    subview.remove();
+        var subviews = this.subviews(selector);
+        subviews.splice(subviews.indexOf(subview), 1);
+    },
 
-    var subviews = this.subviews(selector);
-    subviews.splice(subviews.indexOf(subview), 1);
-  },
+    subviews: function (selector) {
+        this._subviews = this._subviews || {};
 
-  subviews: function (selector) {
-    this._subviews = this._subviews || {};
-
-    if (!selector) {
-      return this._subviews;
-    } else {
-      this._subviews[selector] = this._subviews[selector] || [];
-      return this._subviews[selector];
+        if (!selector) {
+            return this._subviews;
+        } else {
+            this._subviews[selector] = this._subviews[selector] || [];
+            return this._subviews[selector];
+        }
     }
-  }
 });
