@@ -12,5 +12,5 @@ It's like airbnb but 100% unregulated! Sleep in luxury beyond your wildest dream
 - Google Maps JavaScript API v3
 - etc.
 
-Visit us at [laissez-fairebnb.com](http://www.laissez-fairebnb.com/).
-Created by [Gabe Radovsky](http://lnkd.in/2yiksZ).
+Visit us at [laissez-fairebnb.com](https://laissez-fairebnb.herokuapp.com/).
+Created by [Gabe Radovsky](http://linkedin.com/in/radovsky).
